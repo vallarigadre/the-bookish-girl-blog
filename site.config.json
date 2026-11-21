@@ -1,0 +1,28 @@
+{
+  "name": "The Bookish Girl",
+  "tagline": "Romance books worth losing sleep over.",
+  "description": "Romance book lists by trope, Kindle Unlimited finds, romantasy picks and gifts for romance readers, from a reader who reads romance every day.",
+  "url": "https://blog.thebookishgirl.in",
+  "author": "Vallari Gadre",
+  "authorShort": "V",
+  "amazonTag": "creativedi03c-20",
+  "pinterest": "",
+  "instagram": "",
+  "sections": [
+    { "name": "Book Lists", "slug": "book-lists", "aliases": ["Books", "Book List", "Kindle Unlimited", "KU"], "blurb": "Romance books by trope: enemies to lovers, grumpy sunshine, fake dating and more, with Kindle Unlimited picks marked.", "image": "" },
+    { "name": "Romantasy", "slug": "romantasy", "aliases": ["Fantasy Romance"], "blurb": "Dragons, fae courts and slow-burn magic for when real life is not dramatic enough.", "image": "" },
+    { "name": "Kindle & Reading", "slug": "kindle-and-reading", "aliases": ["Kindle", "Reading Gear", "Reading Life", "Audiobooks"], "blurb": "Kindles, audiobooks, reading nooks and the little things that make reading better.", "image": "" },
+    { "name": "Gift Guides", "slug": "gift-guides", "aliases": ["Gifts", "Gift Guide"], "blurb": "Gifts for the romance reader in your life, at every budget.", "image": "" }
+  ],
+  "cloudflareAnalyticsToken": "",
+  "googleAnalyticsId": "",
+  "googleSiteVerification": "",
+  "pinterestVerification": "",
+  "heroAlt": "A stack of romance paperbacks and a Kindle on a cozy blanket beside a mug of tea in warm lamplight",
+  "shopUrl": "",
+  "products": [],
+  "newsletter": false,
+  "stats": false,
+  "trendingLabel": "Trending now",
+  "authorBio": "Hi, I'm Vallari. I read romance every single day, so these lists come from a reader who lives in the genre: the tropes I can't resist, the series worth binging and the Kindle Unlimited finds worth your time."
+}
