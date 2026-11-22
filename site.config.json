@@ -107,21 +107,21 @@
       "name": "Enemies to lovers",
       "slug": "enemies-to-lovers",
       "emoji": "⚔️",
-      "first": "December 2",
+      "first": "November 22",
       "blurb": "They can't stand each other, until they can't stay away. Our favorite rivals-turned-lovers romances."
     },
     {
       "name": "Grumpy sunshine",
       "slug": "grumpy-sunshine",
       "emoji": "☀️",
-      "first": "December 13",
+      "first": "November 22",
       "blurb": "One scowls, one smiles, and somehow it works. Grumpy sunshine romances worth staying up for."
     },
     {
       "name": "Fake dating",
       "slug": "fake-dating",
       "emoji": "💍",
-      "first": "December 27",
+      "first": "November 22",
       "blurb": "It was only supposed to be pretend. Fake dating romances where the feelings get very real."
     },
     {
@@ -149,7 +149,7 @@
       "name": "Romantasy",
       "slug": "romantasy",
       "emoji": "🐉",
-      "first": "December 6",
+      "first": "November 22",
       "blurb": "Dragons, fae courts and slow-burn magic, for readers who want romance with real stakes."
     },
     {
@@ -165,6 +165,34 @@
       "emoji": "🎩",
       "first": "January 24",
       "blurb": "Ballrooms, rakes and witty heroines: Regency romances for Bridgerton fans."
+    },
+    {
+      "name": "Brother's best friend",
+      "slug": "brothers-best-friend",
+      "emoji": "🤫",
+      "first": "December 2",
+      "blurb": "Off limits, which is exactly the problem. Brother's best friend romances full of secret glances and slow burn."
+    },
+    {
+      "name": "Forced proximity",
+      "slug": "forced-proximity",
+      "emoji": "❄️",
+      "first": "December 13",
+      "blurb": "One cabin, one bed, nowhere to run. Forced proximity and snowed in romances."
+    },
+    {
+      "name": "Friends to lovers",
+      "slug": "friends-to-lovers",
+      "emoji": "🤝",
+      "first": "December 27",
+      "blurb": "They were always there. Friends to lovers romances where the best love story starts as a friendship."
+    },
+    {
+      "name": "Spicy romance",
+      "slug": "spicy-romance",
+      "emoji": "🔥",
+      "first": "November 29",
+      "blurb": "Turn the heat up: spicy romance books for readers who like their love stories steamy."
     }
   ],
   "authorPhotoAlt": "Vallari curled up reading by the window"
