@@ -445,3 +445,4 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.15; lett
   .tropes__list--big { grid-template-columns: 1fr; }
   .start__in strong { font-size: 1.25rem; }
 }
+.prose .book__title, .book__title { text-transform: none !important; letter-spacing: 0 !important; }
