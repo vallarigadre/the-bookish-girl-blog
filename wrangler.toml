@@ -1,3 +1,8 @@
 name = "thebookishgirl-blog"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "thebookishgirl-blog"
+database_id = "9c249d66-a4bf-4fc6-b955-f772441c0fe0"

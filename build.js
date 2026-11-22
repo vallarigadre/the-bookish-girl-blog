@@ -65,6 +65,45 @@ function cleanRawMarkdown(body) {
   return b.trim();
 }
 
+// Book and product cards. In a post, a line
+//   {{book title="..." author="..." link="..." cover="" tropes="a, b" ku="yes" series="..." heat="..."}}
+// or {{pick name="..." link="..." image="" label="..."}}
+// becomes a card; the paragraph right after it becomes the card's description.
+function attrs(str) {
+  const o = {};
+  str.replace(/([a-z_]+)\s*=\s*"([^"]*)"/gi, (m, k, v) => { o[k.toLowerCase()] = v; return m; });
+  return o;
+}
+function bookCards(md) {
+  return md.replace(/^\{\{\s*(book|pick)\s+([^\n]*?)\}\}[ \t]*\n?((?:(?!\s*\n)(?!\{\{)[^\n]+\n?)*)/gim, (m, kind, a, desc) => {
+    const o = attrs(a);
+    const isBook = kind.toLowerCase() === "book";
+    const title = o.title || o.name || "";
+    const link = o.link || "#";
+    const img = o.cover || o.image || "";
+    const ku = /^(yes|true|ku)$/i.test(o.ku || "");
+    const tropes = (o.tropes || "").split(",").map((t) => t.trim()).filter(Boolean);
+    const coverHtml = img
+      ? `<img src="${esc(img)}" alt="${esc(isBook ? `Cover of ${title} by ${o.author || ""}` : title)}" loading="lazy">`
+      : `<span class="book__ph"><span class="book__ph-t">${esc(title)}</span>${o.author ? `<span class="book__ph-a">${esc(o.author)}</span>` : ""}</span>`;
+    const descHtml = desc.trim() ? `<div class="book__desc">${marked.parse(desc.trim())}</div>` : "";
+    return `<div class="book${isBook ? "" : " book--pick"}">
+<a class="book__cover" href="${esc(link)}">${coverHtml}</a>
+<div class="book__body">
+${ku ? `<p class="book__badges"><span class="badge badge--ku">Free on Kindle Unlimited</span></p>` : ""}
+<h3 class="book__title"><a href="${esc(link)}">${esc(title)}</a></h3>
+${o.author ? `<p class="book__author">by ${esc(o.author)}</p>` : ""}
+${o.series || o.heat ? `<p class="book__meta">${[o.series, o.heat ? "Heat: " + o.heat : ""].filter(Boolean).map(esc).join(" · ")}</p>` : ""}
+${tropes.length ? `<p class="book__tropes">${tropes.map((t) => `<span>${esc(t)}</span>`).join("")}</p>` : ""}
+${descHtml}
+<p class="book__buy"><a class="book__btn" href="${esc(link)}">${esc(o.label || (isBook ? "Check on Amazon" : "See it on Amazon"))}</a></p>
+</div>
+</div>
+
+`;
+  });
+}
+
 // Tag Amazon links, mark them sponsored, and open outside links in a new tab.
 function processLinks(html) {
   return html.replace(/<a href="([^"]+)"([^>]*)>/g, (m, href, rest) => {
@@ -179,7 +218,7 @@ function loadPosts() {
       const slug = data.slug || fileSlug || slugify(title);
       const section = sectionFor(data.category || guessSection(body));
 
-      body = stripEmDashes(body);
+      body = bookCards(stripEmDashes(body));
       let html = headingIds(renderPicks(shopBlocks(renderProducts(inlinePhotos(processLinks(marked.parse(body)))), "post")))
         .replace(/^\s*<p><em>([^<]*Amazon Associate[^<]*)<\/em><\/p>/i, '<p class="disclosure">$1</p>');
       if (data.quickpicks !== false) html = quickPicks(html);
@@ -197,7 +236,7 @@ function loadPosts() {
         file, slug, title: stripEmDashes(title || slug), date,
         subtitle: data.subtitle ? stripEmDashes(data.subtitle) : "",
         description: stripEmDashes(data.description || firstPara.slice(0, 155)),
-        section, tags: data.tags || [], cover: data.cover || "", coverAlt: data.cover_alt || "",
+        section, tags: data.tags || [], tropes: (data.tropes || []).map((t) => slugify(t)), cover: data.cover || "", coverAlt: data.cover_alt || "",
         pinTitle: data.pin_title || "", pinDescription: data.pin_description || "",
         draft: data.draft === true,
         updated: updated && !isNaN(updated) ? updated : null,
@@ -306,18 +345,22 @@ function card(post) {
   </article>`;
 }
 
+const FREE = site.freebie || {};
 const newsletter = !site.newsletter ? "" : `<section class="letter" aria-labelledby="letter-h">
   <div class="letter__inner">
-    <p class="kicker">The Sunday Ritual</p>
-    <h2 id="letter-h">One splurge, one everyday find, every Sunday</h2>
-    <p>The week's new stories and the Amazon beauty finds worth a look. One short letter, never spam.</p>
-    ${process.env.CF_PAGES ? `<form name="newsletter" method="POST" action="/api/subscribe" class="letter__form">` : `<form name="newsletter" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company" class="letter__form">
-      <input type="hidden" name="form-name" value="newsletter">`}
-      <p class="hp"><label>Company <input name="company"></label></p>
-      <label for="email" class="sr">Email address</label>
-      <input id="email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
-      <button type="submit">Sign me up</button>
-    </form>
+    <div class="letter__art" aria-hidden="true">${FREE.image ? `<img src="${esc(FREE.image)}" alt="">` : `<span class="letter__card"><span>Romance</span><strong>Trope Bingo</strong><span>2027</span></span>`}</div>
+    <div class="letter__text">
+      <p class="kicker">Free printable</p>
+      <h2 id="letter-h">${esc(FREE.title || "Get the romance trope bingo card")}</h2>
+      <p>${esc(FREE.blurb || "")}</p>
+      <form name="newsletter" method="POST" action="/api/subscribe" class="letter__form">
+        <p class="hp"><label>Company <input name="company"></label></p>
+        <label for="email" class="sr">Email address</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+        <button type="submit">${esc(FREE.button || "Send it to me")}</button>
+      </form>
+      <p class="letter__fine">One short email of new romance lists each week. Unsubscribe anytime.</p>
+    </div>
   </div>
 </section>`;
 
@@ -327,7 +370,10 @@ function layout({ title, description, body, path: pagePath = "/", image = "", im
   if (image && image.startsWith("/")) image = SITE_URL + image;
   const fullTitle = title ? `${title} | ${site.name}` : `${site.name}: ${site.tagline}`;
   const canonical = SITE_URL + pagePath;
-  const nav = site.sections.map((s) => `<a href="/${s.slug}/"${pagePath.startsWith("/" + s.slug + "/") ? ' aria-current="page"' : ""}>${s.name}</a>`).join("");
+  const cur = (u) => (pagePath.startsWith(u) ? ' aria-current="page"' : "");
+  const navSection = (slug) => { const s = site.sections.find((x) => x.slug === slug); return s ? `<a href="/${s.slug}/"${cur("/" + s.slug + "/")}>${s.name}</a>` : ""; };
+  const tropeMenu = (site.tropes || []).length ? `<div class="nav__drop"><a href="/tropes/"${cur("/tropes/")}>By trope</a><div class="nav__menu">${site.tropes.map((t) => `<a href="/tropes/${t.slug}/">${esc(t.name)}</a>`).join("")}<a href="/tropes/" class="nav__all">All tropes</a></div></div>` : "";
+  const nav = navSection("book-lists") + tropeMenu + site.sections.filter((s) => s.slug !== "book-lists").map((s) => navSection(s.slug)).join("") + (site.freebie ? `<a href="/freebies/"${cur("/freebies/")}>Freebies</a>` : "");
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -368,10 +414,11 @@ ${site.cloudflareAnalyticsToken ? `<script defer src="https://static.cloudflarei
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+${site.banner ? `<p class="topbar"><a href="${esc(site.banner.url)}"${/amazon\.com/.test(site.banner.url) ? ' rel="sponsored nofollow noopener" target="_blank" class="shop-link"' : ""}>${esc(site.banner.text)} <span aria-hidden="true">&rarr;</span></a></p>` : ""}
 <header class="masthead">
   <div class="masthead__inner">
     <a class="wordmark" href="/"><span>${esc(site.name)}</span></a>
-    <nav class="nav" aria-label="Sections">${nav}${(shop || (site.products || []).length) ? `<a href="/shop/"${pagePath === "/shop/" ? ' aria-current="page"' : ""}>Shop</a>` : ""}<a href="/about/"${pagePath === "/about/" ? ' aria-current="page"' : ""}>About</a></nav>
+    <nav class="nav" aria-label="Sections">${nav}<a href="/about/"${pagePath === "/about/" ? ' aria-current="page"' : ""}>About</a></nav>
   </div>
 </header>
 <main id="main">
@@ -385,7 +432,9 @@ ${body}
     </div>
     <nav aria-label="Site">
       ${site.sections.map((s) => `<a href="/${s.slug}/">${s.name}</a>`).join("")}
-      <a href="/archive/">All stories</a>
+      <a href="/tropes/">By trope</a>
+      ${site.freebie ? `<a href="/freebies/">Freebies</a>` : ""}
+      <a href="/archive/">All lists</a>
       <a href="/about/">About</a>
       <a href="/disclosure/">Affiliate disclosure</a>
       <a href="/privacy/">Privacy</a>
@@ -421,7 +470,7 @@ function homePage(posts) {
     <p class="hero__lede">Romance book lists by trope, Kindle Unlimited finds, romantasy picks and gifts for the reader who always has one more chapter to go.</p>
     <div class="hero__actions">
       <a class="btn btn--peach" href="/book-lists/">Find your next read</a>
-      ${site.newsletter ? `<a class="btn btn--line" href="#letter-h">Get The Sunday Ritual</a>` : `<a class="btn btn--line" href="/archive/">Read the lists</a>`}
+      ${site.newsletter ? `<a class="btn btn--line" href="#letter-h">Get the free bingo card</a>` : `<a class="btn btn--line" href="/archive/">Read the lists</a>`}
     </div>
   </div>
   <div class="hero__media"><div class="hero__frame">${heroImg}</div></div>
@@ -433,17 +482,18 @@ function homePage(posts) {
   <blockquote class="quote"><span aria-hidden="true">&ldquo;</span>Just one more chapter.<br>Said every romance reader, ever.</blockquote>
 </section>`;
 
-  const sections = `<section class="topics wrap" aria-labelledby="topics-h">
-  <p class="kicker">Pick your mood</p>
-  <h2 id="topics-h" class="h-sec">Browse the shelves</h2>
-  <div class="topics__grid">${site.sections.map((s) => {
-    const f = [`section-${s.slug}.jpg`, s.image].filter(Boolean).find(img);
-    return `<a class="topic" href="/${s.slug}/">
-      <span class="topic__img">${f ? `<img src="/images/${f}" alt="" loading="lazy">` : `<span class="ph ph--${s.slug}" aria-hidden="true">${motifs[s.slug] || motifs.skincare}</span>`}</span>
-      <span class="topic__name">${s.name}</span>
-      <span class="topic__blurb">${esc(s.blurb)}</span>
-    </a>`;
+  const sections = `<section class="starts wrap" aria-labelledby="topics-h">
+  <p class="kicker center">Not sure what to read next?</p>
+  <h2 id="topics-h" class="h-sec center">Start here</h2>
+  <div class="starts__grid">${(site.startHere || []).map((t, i) => {
+    const f = t.image && img(t.image);
+    return `<a class="start start--${i + 1}" href="${esc(t.url)}">${f ? `<img src="/images/${esc(t.image)}" alt="" loading="lazy">` : ""}<span class="start__in"><strong>${esc(t.title)}</strong><span>${esc(t.sub)} &rarr;</span></span></a>`;
   }).join("")}</div>
+</section>
+<section class="tropes wrap" aria-labelledby="tropes-h">
+  <p class="kicker center">Pick your favorite trope</p>
+  <h2 id="tropes-h" class="h-sec center">Browse by trope</h2>
+  <div class="tropes__list">${(site.tropes || []).map((t) => `<a class="trope" href="/tropes/${t.slug}/"><span class="trope__e" aria-hidden="true">${esc(t.emoji || "")}</span>${esc(t.name)}</a>`).join("")}</div>
 </section>`;
 
   // Trending row: only when it adds posts that are not already in Latest lists.
@@ -473,7 +523,19 @@ function homePage(posts) {
   </div>
 </section>`;
 
-  const body = `${hero}\n${welcome}\n\n${sections}\n${trending}\n${blog}\n${freebies}\n${newsletter}`;
+  const author = img("author.jpg")
+    ? `<img src="/images/author.jpg" alt="${esc(site.authorPhotoAlt || "Vallari with a stack of romance books")}" loading="lazy">`
+    : `<span class="ph ph--book-lists" aria-hidden="true">${BOOK}</span>`;
+  const aboutStrip = `<section class="hello wrap" aria-labelledby="hello-h">
+  <div class="hello__img">${author}</div>
+  <div class="hello__text">
+    <p class="kicker">Hi, I'm Vallari</p>
+    <h2 id="hello-h" class="h-sec">A romance reader, every single day</h2>
+    <p>${esc(site.authorBio || "")}</p>
+    <p><a class="btn btn--line" href="/about/">More about me</a></p>
+  </div>
+</section>`;
+  const body = `${hero}\n${sections}\n${trending}\n${blog}\n${aboutStrip}\n${welcome}\n${newsletter}`;
   write("index.html", layout({ path: "/", body, description: site.description }));
 }
 
@@ -488,16 +550,39 @@ function sectionPages(posts) {
   }
 }
 
+function tropePages(posts) {
+  const tropes = site.tropes || [];
+  const tile = (t) => {
+    const n = posts.filter((p) => p.tropes.includes(t.slug)).length;
+    return `<a class="trope trope--big" href="/tropes/${t.slug}/"><span class="trope__e" aria-hidden="true">${esc(t.emoji || "")}</span><span><strong>${esc(t.name)}</strong><span class="trope__n">${n ? `${n} list${n === 1 ? "" : "s"}` : t.first ? `First list ${esc(t.first)}` : "Coming soon"}</span></span></a>`;
+  };
+  write("tropes/index.html", layout({ title: "Romance books by trope", description: "Find your next romance book by trope: enemies to lovers, grumpy sunshine, fake dating, small town, second chance and more.", path: "/tropes/", body: `<section class="wrap listing"><header class="listing__head"><h1>Romance books by trope</h1><p>Pick the trope you're in the mood for. Every list marks the Kindle Unlimited books.</p></header><div class="tropes__list tropes__list--big">${tropes.map(tile).join("")}</div></section>${newsletter}` }));
+  for (const t of tropes) {
+    const list = posts.filter((p) => p.tropes.includes(t.slug));
+    const body = `<section class="wrap listing">
+      <header class="listing__head"><p class="kicker">By trope</p><h1>${esc(t.name)} romance books</h1><p>${esc(t.blurb || "")}</p></header>
+      ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<p class="empty-note">${t.first ? `The first ${esc(t.name.toLowerCase())} list goes up on ${esc(t.first)}.` : "This list is on its way."} Meanwhile, <a href="/archive/">browse every list</a>${site.banner ? ` or <a href="${esc(site.banner.url)}" rel="sponsored nofollow noopener" target="_blank" class="shop-link">start a Kindle Unlimited free trial</a>` : ""}.</p>`}
+    </section>${newsletter}`;
+    write(`tropes/${t.slug}/index.html`, layout({ title: `${t.name} romance books`, description: t.blurb || `${t.name} romance books, with Kindle Unlimited picks marked.`, path: `/tropes/${t.slug}/`, body }));
+  }
+}
+
+function freebiesPage() {
+  if (!site.freebie) return;
+  const f = site.freebie;
+  write("freebies/index.html", layout({ title: "Free printables for romance readers", description: f.blurb, path: "/freebies/", body: `<section class="wrap listing"><header class="listing__head"><h1>Free printables for romance readers</h1><p>Little extras to make your reading year more fun.</p></header></section>${newsletter}` }));
+}
+
 function archivePage(posts) {
   const byMonth = {};
   posts.forEach((p) => {
     const k = p.date.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
     (byMonth[k] = byMonth[k] || []).push(p);
   });
-  const body = `<section class="wrap narrow archive"><h1>All stories</h1>
+  const body = `<section class="wrap narrow archive"><h1>All lists</h1>
     ${Object.entries(byMonth).map(([m, list]) => `<h2>${m}</h2><ul>${list.map((p) => `<li><a href="${p.url}">${esc(p.title)}</a><span>${esc(p.section.name)}</span></li>`).join("")}</ul>`).join("") || "<p>No stories yet.</p>"}
   </section>`;
-  write("archive/index.html", layout({ title: "All stories", path: "/archive/", body }));
+  write("archive/index.html", layout({ title: "All lists", path: "/archive/", body }));
 }
 
 function postPages(posts, drafts = []) {
@@ -539,7 +624,8 @@ function postPages(posts, drafts = []) {
     ${post.tags.length ? `<p class="tags">${post.tags.map((t) => `<span>${esc(t)}</span>`).join("")}</p>` : ""}
     <a class="button button--ghost" href="${pinHref}" target="_blank" rel="noopener">Save this story to Pinterest</a>
     <aside class="byline-box">
-      <p class="byline-box__h">Why trust these picks</p>
+      <span class="byline-box__img">${fs.existsSync(path.join(ROOT, "static/images/author.jpg")) ? `<img src="/images/author.jpg" alt="" loading="lazy">` : `<span class="byline-box__mono">V</span>`}</span>
+      <p class="byline-box__h">Hi, I'm Vallari</p>
       <p>${esc(site.authorBio || "")} <a href="/about/">More about me</a>.</p>
     </aside>
   </footer>
@@ -572,7 +658,8 @@ function staticPages(pages) {
     const body = `<article class="post"><header class="post__head wrap"><h1>${esc(pg.title)}</h1></header><div class="prose">${pg.html}</div></article>`;
     write(`${pg.slug}/index.html`, layout({ title: pg.title, description: pg.description, path: `/${pg.slug}/`, body }));
   });
-  write("thanks/index.html", layout({ title: "You're on the list", path: "/thanks/", body: `<section class="wrap narrow empty"><h1>You're on the list</h1><p>The next Sunday letter will land in your inbox. Until then, <a href="/">read the latest story</a>.</p></section>` }));
+  const F = site.freebie || {};
+  write("thanks/index.html", layout({ title: "You're on the list", path: "/thanks/", noindex: true, body: `<section class="wrap narrow empty"><h1>You're on the list</h1>${F.file ? `<p>Here's your printable. Download it, print it, and start crossing off tropes.</p><p><a class="btn btn--peach" href="${esc(F.file)}" download>Download ${esc(F.short || "the printable")}</a></p>` : ""}<p>New romance lists will land in your inbox every week. Until then, <a href="/">find your next read</a>.</p></section>` }));
   write("404.html", layout({ title: "Page not found", path: "/404/", body: `<section class="wrap narrow empty"><h1>This page has moved or never existed</h1><p>Try the <a href="/archive/">full list of stories</a> or head back to the <a href="/">front page</a>.</p></section>` }));
 }
 
@@ -654,6 +741,8 @@ const posts = allPosts.filter((p) => !p.draft && p.date <= new Date(Date.now() +
 const pages = loadPages();
 homePage(posts);
 sectionPages(posts);
+tropePages(posts);
+freebiesPage();
 archivePage(posts);
 postPages(posts, drafts);
 staticPages(pages);
