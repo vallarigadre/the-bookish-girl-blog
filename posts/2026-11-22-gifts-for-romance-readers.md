@@ -32,6 +32,8 @@ Here are all 25 ideas, starting with that one, grouped by the kind of reader she
 6. **[Wireless earbuds for audiobooks](https://www.amazon.com/s?k=wireless+earbuds&tag=creativedi03c-20).** For the reader who listens while she drives, cooks or walks.
 7. **[Kindle stand or holder](https://www.amazon.com/s?k=kindle+stand+holder+bed&tag=creativedi03c-20).** Holds her e-reader up so she can read in bed or at the table without holding it.
 
+![A reading light glowing over an open paperback on a bedside table with a silk sleep mask](/images/gifts-for-romance-readers-2.jpg)
+
 ## For the cozy reader
 
 8. **[Rechargeable neck reading light](https://www.amazon.com/s?k=neck+reading+light+rechargeable&tag=creativedi03c-20).** Lights up a paperback without waking anyone else up.
