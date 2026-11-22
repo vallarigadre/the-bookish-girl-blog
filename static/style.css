@@ -110,7 +110,7 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.15; lett
 
 /* ---------- topics ---------- */
 .topics { padding-top: 2rem; padding-bottom: clamp(3rem, 7vw, 5rem); text-align: center; }
-.topics__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; text-align: left; }
+.topics__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; text-align: left; }
 .topic { text-decoration: none; display: grid; gap: .5rem; align-content: start; }
 .topic__img { display: block; aspect-ratio: 1; overflow: hidden; margin-bottom: .6rem; }
 .topic__img img, .topic__img .ph { width: 100%; height: 100%; object-fit: cover; min-height: 0; transition: transform .5s ease; }
@@ -332,3 +332,16 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.15; lett
   .ownshop__grid--3, .ownshop__grid--4 { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: .8rem; padding-bottom: .4rem; }
   .ownshop__grid--3 .ownshop__item, .ownshop__grid--4 .ownshop__item { flex: 0 0 62%; scroll-snap-align: start; }
 }
+
+/* The Bookish Girl section colors */
+.ph--book-lists { background: var(--oat); } .ph--book-lists svg { stroke: var(--ink); }
+.ph--romantasy { background: var(--ink); } .ph--romantasy svg { stroke: var(--blush); }
+.ph--kindle-and-reading { background: var(--rose); } .ph--kindle-and-reading svg { stroke: var(--blush); }
+.cover--book-lists { background: var(--blush); }
+.cover--book-lists .cover__section, .cover--book-lists .cover__title { color: var(--ink); }
+.cover--book-lists .cover__motif svg { stroke: var(--ink); }
+.cover--romantasy { background: var(--ink); }
+.cover--kindle-and-reading { background: var(--rose); }
+.cover--gift-guides { background: var(--blush); }
+.cover--gift-guides .cover__section, .cover--gift-guides .cover__title { color: var(--ink); }
+.cover--gift-guides .cover__motif svg { stroke: var(--ink); }

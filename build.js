@@ -429,7 +429,7 @@ function homePage(posts) {
 
   const welcome = `<section class="welcome wrap narrow">
   <p>Welcome to The Bookish Girl, a romance reader's corner of the internet.</p>
-  <p>Every list here is built around the tropes you search for, with the Kindle Unlimited books clearly marked, so you can find your next obsession without a stack of returns.</p>
+  <p>Every list here is built around the tropes you search for, with the Kindle Unlimited books clearly marked, so you can find your next obsession fast.</p>
   <blockquote class="quote"><span aria-hidden="true">&ldquo;</span>Just one more chapter.<br>Said every romance reader, ever.</blockquote>
 </section>`;
 

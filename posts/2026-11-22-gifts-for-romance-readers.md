@@ -63,4 +63,4 @@ Here are all 25 ideas, starting with that one, grouped by the kind of reader she
 
 If she doesn't have Kindle Unlimited yet, she can [start a free trial here](https://www.amazon.com/kindleunlimited?tag=creativedi03c-20) and test it out over the holidays. Or wrap up a [Kindle Unlimited gift membership](https://www.amazon.com/gp/kindle/ku/gift_landing?tag=creativedi03c-20) and let her read as many romances as she likes in the new year.
 
-Want book ideas to go with your gift? Next week I'm sharing enemies-to-lovers romances you can read on Kindle Unlimited.
+Want book ideas to go with your gift? On Wednesday I'm sharing cozy Christmas romance books to read this December.
