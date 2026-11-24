@@ -88,7 +88,7 @@ function bookCards(md) {
       : `<span class="book__ph"><span class="book__ph-t">${esc(title)}</span>${o.author ? `<span class="book__ph-a">${esc(o.author)}</span>` : ""}</span>`;
     const descHtml = desc.trim() ? `<div class="book__desc">${marked.parse(desc.trim())}</div>` : "";
     return `<div class="book${isBook ? "" : " book--pick"}">
-<a class="book__cover" href="${esc(link)}">${coverHtml}</a>
+<a class="book__cover${/-3d\./.test(img) ? " book__cover--3d" : ""}" href="${esc(link)}">${coverHtml}</a>
 <div class="book__body">
 ${ku ? `<p class="book__badges"><span class="badge badge--ku">Free on Kindle Unlimited</span></p>` : ""}
 <h3 class="book__title"><a href="${esc(link)}">${esc(title)}</a></h3>

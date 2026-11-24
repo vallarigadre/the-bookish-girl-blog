@@ -26,44 +26,44 @@ This list leans contemporary: football and hockey rivals, academic nemeses, two 
 
 ## Sports rivals who can't stand each other
 
-{{book title="Intercepted" author="Aleatha Romig" link="https://www.amazon.com/dp/B0G2TF254B?tag=creativedi03c-20" cover="" tropes="enemies to lovers, second chance, football romance" ku="yes" series="The Coopers, book 1"}}
+{{book title="Intercepted" author="Aleatha Romig" link="https://www.amazon.com/dp/B0G2TF254B?tag=creativedi03c-20" cover="/images/covers/intercepted.jpg" tropes="enemies to lovers, second chance, football romance" ku="yes" series="The Coopers, book 1"}}
 Veteran quarterback Fin Graham gets traded to the team her family owns, which would be fine if he hadn't vanished from her life years ago without a word. She wants revenge, he wants a second chance, and the whole team is about to watch it play out. A brand new series starter, so you can get in at the very beginning.
 
 {{book title="Face Me Off" author="Kimberly Readnour" link="https://www.amazon.com/dp/B0CZK84QKK?tag=creativedi03c-20" cover="" tropes="enemies to lovers, college hockey, secret pact" series="Cessna U Hockey, book 2"}}
 Hockey player Ryan Sorenson and people-pleaser Maddy Grimes start as enemies, slide into frenemies with benefits and then make a secret pact after one big mistake. Their families' businesses are tangled together, which makes keeping things casual impossible. A fun college hockey pick if you like your rivals with a side of chaos.
 
-{{book title="Hate the Player" author="Max Monroe" link="https://www.amazon.com/dp/B08CL4H4Y3?tag=creativedi03c-20" cover="" tropes="enemies to lovers, Hollywood, romantic comedy" series="The Hollywood Collection, book 3"}}
+{{book title="Hate the Player" author="Max Monroe" link="https://www.amazon.com/dp/B08CL4H4Y3?tag=creativedi03c-20" cover="/images/covers/hate-the-player.jpg" tropes="enemies to lovers, Hollywood, romantic comedy" series="The Hollywood Collection, book 3"}}
 An actress lands a role opposite a costar with a serious playboy reputation and decides on day one that she will hate him. The trouble is that filming keeps throwing them together, and the act gets harder to keep up. Max Monroe writes the kind of laugh-out-loud banter that makes this trope sing.
 
 ![Two steaming mugs on a wooden tray beside an open paperback and a glowing Kindle, with a burgundy blanket and fairy lights](/images/enemies-to-lovers-romance-books-kindle-unlimited-2.jpg)
 
 ## Workplace and academic nemeses
 
-{{book title="Falling for My Enemy" author="Claire Kingsley" link="https://www.amazon.com/dp/B0841FYJ8N?tag=creativedi03c-20" cover="" tropes="rivals to lovers, academic rivals, romantic comedy" ku="yes" series="Dirty Martini Running Club, book 2"}}
+{{book title="Falling for My Enemy" author="Claire Kingsley" link="https://www.amazon.com/dp/B0841FYJ8N?tag=creativedi03c-20" cover="/images/covers/falling-for-my-enemy.jpg" tropes="rivals to lovers, academic rivals, romantic comedy" ku="yes" series="Dirty Martini Running Club, book 2"}}
 Two rival researchers in the same field have been sniping at each other for years. She is convinced he coasts on charm, and he cannot resist needling her, random animal facts included. Being forced to work together turns all that friction into something much warmer. You may also see it under its original title, Love According to Science.
 
-{{book title="The Takeover" author="T.L. Swan" link="https://www.amazon.com/dp/B07Y82JMF8?tag=creativedi03c-20" cover="" tropes="enemies to lovers, workplace, billionaire" series="The Miles High Club, book 2"}}
+{{book title="The Takeover" author="T.L. Swan" link="https://www.amazon.com/dp/B07Y82JMF8?tag=creativedi03c-20" cover="/images/covers/the-takeover.jpg" tropes="enemies to lovers, workplace, billionaire" series="The Miles High Club, book 2"}}
 When the powerful Miles family buys out her media company, she ends up head to head with Tristan Miles, the man running the takeover. It is boardroom rivalry with a lot of heat underneath. T.L. Swan readers know exactly how addictive her billionaire heroes are.
 
 ## Small-town feuds and old grudges
 
-{{book title="Chasing Her Fire" author="Claire Kingsley" link="https://www.amazon.com/dp/B094BVP4H8?tag=creativedi03c-20" cover="" tropes="enemies to lovers, small town, firefighter" ku="yes" series="The Bailey Brothers, book 5"}}
+{{book title="Chasing Her Fire" author="Claire Kingsley" link="https://www.amazon.com/dp/B094BVP4H8?tag=creativedi03c-20" cover="/images/covers/chasing-her-fire.jpg" tropes="enemies to lovers, small town, firefighter" ku="yes" series="The Bailey Brothers, book 5"}}
 Firefighter Logan Bailey and Cara Goulding have been each other's nemesis forever, so one night together is the last thing either of them will admit to. In a feuding little town like Tilikum, avoiding each other is not an option, and the tension keeps climbing. It works best if you start the series with Protecting You, which is half the fun anyway.
 
-{{book title="Dirty Talking Rival" author="Pippa Grant" link="https://www.amazon.com/dp/B07TBSYTT1?tag=creativedi03c-20" cover="" tropes="rival businesses, friends to enemies to lovers, small town" series="Standalone"}}
+{{book title="Dirty Talking Rival" author="Pippa Grant" link="https://www.amazon.com/dp/B07TBSYTT1?tag=creativedi03c-20" cover="/images/covers/dirty-talking-rival.jpg" tropes="rival businesses, friends to enemies to lovers, small town" series="Standalone"}}
 A baker comes home to save her mother's bakery, only to find her former high school best friend running the competition. They are both determined to win, and the rivalry gets a lot hotter once he figures out why she really came back. Pippa Grant is pure comfort chaos, and this one was first published as Master Baker.
 
 {{book title="I Knead You Tonight" author="Teagan Hunter" link="https://www.amazon.com/dp/B07YLW1C9J?tag=creativedi03c-20" cover="" tropes="enemies to lovers, romantic comedy" series="Slice series"}}
 Amazon bills it as an enemies-to-lovers romcom, and it delivers exactly that: two people who rub each other the wrong way, sharp comebacks and a slow slide into something sweet. It belongs to Teagan Hunter's Slice series, with its delightfully punny titles. Easy to binge in one cozy evening.
 
-{{book title="Dear Ava" author="Ilsa Madden-Mills" link="https://www.amazon.com/dp/B084FJW8DQ?tag=creativedi03c-20" cover="" tropes="enemies to lovers, secret letters, prep school" series="Standalone"}}
+{{book title="Dear Ava" author="Ilsa Madden-Mills" link="https://www.amazon.com/dp/B084FJW8DQ?tag=creativedi03c-20" cover="/images/covers/dear-ava-3d.jpg" tropes="enemies to lovers, secret letters, prep school" series="Standalone"}}
 A scholarship student at an elite prep school becomes the target of the popular crowd while trading anonymous letters with a mystery boy. At the same time she keeps clashing with the school's star athlete, the one person she is sure she resents most. If you love a secret identity reveal, save this for a weekend.
 
 ![A reading nook by a rainy window with a cream knit throw, a stack of paperbacks and a candle glowing in warm light](/images/enemies-to-lovers-romance-books-kindle-unlimited-3.jpg)
 
 ## Enemies with pointed ears
 
-{{book title="The Savage and the Swan" author="Ella Fields" link="https://www.amazon.com/dp/B097SW63GS?tag=creativedi03c-20" cover="" tropes="enemies to lovers, fae, romantasy" series="Standalone (Fated Fae)"}}
+{{book title="The Savage and the Swan" author="Ella Fields" link="https://www.amazon.com/dp/B097SW63GS?tag=creativedi03c-20" cover="" tropes="enemies to lovers, fae, romantasy" series="Fated Fae, book 1 (standalone)"}}
 Amazon describes it as a standalone enemies-to-lovers romantasy, and it is a great pick if you want the trope with fae courts instead of football fields. A standalone means no cliffhanger and no waiting on a sequel. Ella Fields writes yearning like few others.
 
 ## Which one should you read first?
@@ -88,3 +88,5 @@ If you read more than two or three books a month, Kindle Unlimited (now called K
 **[Start your free Kindle Unlimited trial here](https://www.amazon.com/kindleunlimited?tag=creativedi03c-20)**, then grab Intercepted first.
 
 Looking for a gift for the friend who lent you her favorite enemies to lovers book? My list of [25 gifts for romance readers that aren't books](/posts/gifts-for-romance-readers/) has you covered, and the next list lands on Wednesday.
+
+<p class="covers-credit">Book covers courtesy of the authors and publishers.</p>

@@ -446,3 +446,6 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.15; lett
   .start__in strong { font-size: 1.25rem; }
 }
 .prose .book__title, .book__title { text-transform: none !important; letter-spacing: 0 !important; }
+
+.book__cover--3d { box-shadow: none; overflow: visible; }
+.covers-credit { font-size: .8rem; color: #8a7a80; margin-top: 2rem; }
