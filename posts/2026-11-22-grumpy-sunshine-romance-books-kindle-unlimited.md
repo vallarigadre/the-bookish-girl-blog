@@ -34,7 +34,7 @@ Linebacker Bowie Fox is raising his little girl and has no room for romance. Aft
 {{book title="Runaway Love" author="Melanie Harlow" link="https://www.amazon.com/dp/B0BYF6G58M?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, nanny, runaway bride" series="Cherry Tree Harbor, book 1"}}
 Veronica Sutton turns up on Austin's doorstep still in her wedding gown after running from her own wedding. She charms his family and the whole town into hiring her as his kids' summer nanny, while Austin scowls and waits for her to leave. Melanie Harlow writes small-town family warmth beautifully.
 
-{{book title="Learn Your Lesson" author="Kandi Steiner" link="https://www.amazon.com/dp/B0CGXXDF5J?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, live-in nanny, hockey" series="Kings of the Ice, book 3 (standalone)"}}
+{{book title="Learn Your Lesson" author="Kandi Steiner" link="https://www.amazon.com/dp/B0CGXXDF5J?tag=creativedi03c-20" cover="/images/covers/learn-your-lesson.jpg" tropes="grumpy sunshine, single dad, live-in nanny, hockey" series="Kings of the Ice, book 3 (standalone)"}}
 Grumpy goalie Will Perry cannot keep a nanny, so he hires Chloe, his daughter's sunny kindergarten teacher, and she moves into his pool house. They strike a deal that is supposed to stay simple, and of course it does not. A standalone in a hockey series readers love, and the pool house setup is pure forced proximity gold.
 
 ![A sunny kitchen table with a yellow mug, a plate of cookies, an open paperback and a Kindle, with soft morning light and a cream throw](/images/grumpy-sunshine-romance-books-kindle-unlimited-2.jpg)
@@ -55,7 +55,7 @@ Anson Hunt is a rude loner with a hidden past and the contractor restoring Rhode
 {{book title="The Grump Who Stole Summer" author="Ella Fields" link="https://www.amazon.com/dp/B09LVCG6SN?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, second chance, bookstore" series="Standalone"}}
 A grumpy bookstore recluse and a vibrant, carefree socialite get a second chance neither of them saw coming. A bookish hero hiding among the shelves is about as cozy as this trope gets. Perfect for a lazy weekend.
 
-{{book title="The Highland Fling" author="Meghan Quinn" link="https://www.amazon.com/dp/B08LKBY9MN?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, romantic comedy, fish out of water, Scotland" series="Standalone"}}
+{{book title="The Highland Fling" author="Meghan Quinn" link="https://www.amazon.com/dp/B08LKBY9MN?tag=creativedi03c-20" cover="/images/covers/the-highland-fling.jpg" tropes="grumpy sunshine, romantic comedy, fish out of water, Scotland" series="Standalone"}}
 Freshly fired for the third time, quirky American Bonnie takes a job on a whim running a coffee shop in a tiny village in the Scottish Highlands. Rowan, the gruff local handyman, wants nothing to do with the newcomer. Meghan Quinn's humor plus a Highlands grump is a very good combination.
 
 ![A cozy cottage window with a mug of tea, a tartan blanket, a paperback with a blank cover and fairy lights at dusk](/images/grumpy-sunshine-romance-books-kindle-unlimited-3.jpg)
@@ -87,3 +87,5 @@ If you read a few romances a month, Kindle Unlimited (now Kindle+) usually pays 
 **[Start your free Kindle Unlimited trial here](https://www.amazon.com/kindleunlimited?tag=creativedi03c-20)** and start with Grumpily Ever After.
 
 Want something with more bite? My list of [enemies-to-lovers romance books on Kindle Unlimited](/posts/enemies-to-lovers-romance-books-kindle-unlimited/) is full of rivals who fight first and fall later, and the next list lands on Wednesday.
+
+<p class="covers-credit">Book covers courtesy of the authors and publishers.</p>
