@@ -28,10 +28,10 @@ This list is mostly contemporary and heavy on the good stuff: single dads, hocke
 {{book title="The Right Wrong Promise" author="Nicole Snow" link="https://www.amazon.com/dp/B0G6HZH2R6?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, forced proximity" ku="yes" series="The Blackthorn Inheritance, book 2 (standalone)"}}
 Margot Blackthorn inherits her grandfather's lake house in Maine, along with a few of his secrets and one surprise tenant: Kane Saint, a gruff single dad of twins who is renting part of the place. After a mix-up she lets him stay, and the two of them start untangling the old man's legacy together. Nicole Snow has made the grumpy hero her signature, and this one reads as a standalone.
 
-{{book title="Wicked Love" author="Willow Aster" link="https://www.amazon.com/dp/B0D5KK5NZG?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, football, surprise pregnancy" ku="yes" series="The Single Dad Playbook, book 4"}}
+{{book title="Wicked Love" author="Willow Aster" link="https://www.amazon.com/dp/B0D5KK5NZG?tag=creativedi03c-20" cover="/images/covers/wicked-love.jpg" tropes="grumpy sunshine, single dad, football, surprise pregnancy" ku="yes" series="The Single Dad Playbook, book 4"}}
 Linebacker Bowie Fox is raising his little girl and has no room for romance. After one night with Poppy, the bubbly new coach at his daughter's school, he pulls away hard, and then she finds out she is pregnant. Big feelings, a sweet kid and a hero who has to learn to let someone in.
 
-{{book title="Runaway Love" author="Melanie Harlow" link="https://www.amazon.com/dp/B0BYF6G58M?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, nanny, runaway bride" series="Cherry Tree Harbor, book 1"}}
+{{book title="Runaway Love" author="Melanie Harlow" link="https://www.amazon.com/dp/B0BYF6G58M?tag=creativedi03c-20" cover="/images/covers/runaway-love.jpg" tropes="grumpy sunshine, single dad, nanny, runaway bride" series="Cherry Tree Harbor, book 1"}}
 Veronica Sutton turns up on Austin's doorstep still in her wedding gown after running from her own wedding. She charms his family and the whole town into hiring her as his kids' summer nanny, while Austin scowls and waits for her to leave. Melanie Harlow writes small-town family warmth beautifully.
 
 {{book title="Learn Your Lesson" author="Kandi Steiner" link="https://www.amazon.com/dp/B0CGXXDF5J?tag=creativedi03c-20" cover="/images/covers/learn-your-lesson.jpg" tropes="grumpy sunshine, single dad, live-in nanny, hockey" series="Kings of the Ice, book 3 (standalone)"}}
@@ -44,12 +44,12 @@ Grumpy goalie Will Perry cannot keep a nanny, so he hires Chloe, his daughter's 
 {{book title="Grumpily Ever After" author="Teagan Hunter" link="https://www.amazon.com/dp/B0FBX4X3MB?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, former NHL player, secret relationship" ku="yes" series="Stick Taps, book 1"}}
 Odette is a cheerful, slightly chaotic wedding planner organizing her best friend's wedding at a cidery. The cidery belongs to the bride's brother, Noah, a recently divorced former NHL player who has stopped believing in happy endings. The title says it all, and it kicks off a new series.
 
-{{book title="Lucky Shot" author="Rebecca Jenshak" link="https://www.amazon.com/dp/B0F7YCR4JW?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, single dad, hockey, forced proximity" ku="yes" series="Moonshot Hockey, book 1"}}
+{{book title="Lucky Shot" author="Rebecca Jenshak" link="https://www.amazon.com/dp/B0F7YCR4JW?tag=creativedi03c-20" cover="/images/covers/lucky-shot.jpg" tropes="grumpy sunshine, single dad, hockey, forced proximity" ku="yes" series="Moonshot Hockey, book 1"}}
 Bubbly romance author Ruby rents the cabin on hockey player Nick Galaxy's property to research a book, then asks him to teach her to skate. Nick is a guarded single dad who wants no writer poking around his life. A sweet setup with a heroine who writes romance, which is always a treat.
 
 ## Small-town loners with soft hearts
 
-{{book title="Fragile Sanctuary" author="Catherine Cowles" link="https://www.amazon.com/dp/B0CR1N7YGX?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, small town, romantic suspense, protector" ku="yes" series="Sparrow Falls, book 1"}}
+{{book title="Fragile Sanctuary" author="Catherine Cowles" link="https://www.amazon.com/dp/B0CR1N7YGX?tag=creativedi03c-20" cover="/images/covers/fragile-sanctuary-3d.jpg" tropes="grumpy sunshine, small town, romantic suspense, protector" ku="yes" series="Sparrow Falls, book 1"}}
 Anson Hunt is a rude loner with a hidden past and the contractor restoring Rhodes Stirling's house. Rhodes stays upbeat despite her own painful history, and when danger starts circling her, Anson becomes the one standing between her and it. All six Sparrow Falls books came to Kindle Unlimited in 2025, so you can binge the whole family.
 
 {{book title="The Grump Who Stole Summer" author="Ella Fields" link="https://www.amazon.com/dp/B09LVCG6SN?tag=creativedi03c-20" cover="" tropes="grumpy sunshine, second chance, bookstore" series="Standalone"}}
