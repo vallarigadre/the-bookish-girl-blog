@@ -26,45 +26,45 @@ I have read my way through a lot of fae courts trying to get that feeling back. 
 
 ## If you loved the cursed prince beginning
 
-{{book title="A Curse So Dark and Lonely" author="Brigid Kemmerer" link="https://www.amazon.com/dp/B07CVFRJ8N?tag=creativedi03c-20" cover="" tropes="beauty and the beast, cursed prince, slow burn" series="The Cursebreaker Series, book 1 (complete trilogy)"}}
+{{book title="A Curse So Dark and Lonely" author="Brigid Kemmerer" link="https://link.amazon/B02fEwP4i" cover="" tropes="beauty and the beast, cursed prince, slow burn" series="The Cursebreaker Series, book 1 (complete trilogy)"}}
 Harper is pulled out of Washington, D.C., and into Emberfall, a kingdom where Prince Rhen is trapped in a curse that keeps turning him into a monster. Only falling in love can break it, and Harper has no plans to cooperate. It is young adult and clean, but if the early Spring Court chapters were your favorite, this scratches the exact same itch.
 
-{{book title="Bonded by Thorns" author="Elizabeth Helen" link="https://www.amazon.com/dp/B0BRTFM2DH?tag=creativedi03c-20" cover="" tropes="beauty and the beast, fae, why choose" series="Beasts of the Briar, book 1"}}
+{{book title="Bonded by Thorns" author="Elizabeth Helen" link="https://link.amazon/B094r0CSk" cover="" tropes="beauty and the beast, fae, why choose" series="Beasts of the Briar, book 1"}}
 A bookish heroine ends up in a fae castle full of cursed princes, and this Beauty and the Beast retelling leans all the way into the romance. It is a why choose story, so she does not have to pick just one of them. It is for adults, with plenty of swoon and a heroine who loves books as much as we do.
 
-{{book title="A Dawn of Onyx" author="Kate Golden" link="https://www.amazon.com/dp/B0C37BJG1N?tag=creativedi03c-20" cover="" tropes="enemies to lovers, captive, healer heroine" series="The Sacred Stones, book 1 (complete trilogy)"}}
+{{book title="A Dawn of Onyx" author="Kate Golden" link="https://link.amazon/B078vk8so" cover="" tropes="enemies to lovers, captive, healer heroine" series="The Sacred Stones, book 1 (complete trilogy)"}}
 Arwen is a healer captured by the Onyx Kingdom and forced to treat the enemy king's soldiers. Her only way out is a sharp-tongued fellow prisoner named Kane, who is clearly hiding something. If you loved Feyre being dragged into a world she was raised to fear, start here, and the whole trilogy is out.
 
 ![A cozy reading corner with a fantasy paperback, dried roses and a mug of tea beside a window at dusk](/images/books-like-a-court-of-thorns-and-roses-2.jpg)
 
 ## If the fae courts were your favorite part
 
-{{book title="Quicksilver" author="Callie Hart" link="https://www.amazon.com/dp/B0DDKHNVWF?tag=creativedi03c-20" cover="" tropes="fae, enemies to lovers, grumpy hero" series="Fae & Alchemy, book 1 (final book due 2027)" heat="Spicy"}}
+{{book title="Quicksilver" author="Callie Hart" link="https://link.amazon/B02ZXH8rd" cover="" tropes="fae, enemies to lovers, grumpy hero" series="Fae & Alchemy, book 1 (final book due 2027)" heat="Spicy"}}
 Saeris Fane is a thief in a dying desert city until she is pulled through a portal into the fae realm. There she is stuck with Kingfisher, a sarcastic, impossibly skilled fae warrior who wants nothing to do with her. This is the book I hand to every ACOTAR reader first: big world, slow tension and open-door scenes for adults.
 
-{{book title="The Cruel Prince" author="Holly Black" link="https://www.amazon.com/dp/B073WFB5B2?tag=creativedi03c-20" cover="" tropes="fae court, enemies to lovers, scheming heroine" series="The Folk of the Air, book 1 (complete trilogy)"}}
+{{book title="The Cruel Prince" author="Holly Black" link="https://link.amazon/B0bS7Sqrc" cover="" tropes="fae court, enemies to lovers, scheming heroine" series="The Folk of the Air, book 1 (complete trilogy)"}}
 Jude is a mortal girl raised in Faerie by the general who killed her parents, and she wants a place at the High Court more than anything. Standing in her way is Prince Cardan, the cruelest of them all. It is young adult with no spice, but the court politics and the rivalry are so sharp that adults love it just as much.
 
-{{book title="A Court This Cruel and Lovely" author="Stacia Stark" link="https://www.amazon.com/dp/B0BWX1LY33?tag=creativedi03c-20" cover="" tropes="forbidden magic, slow burn, mercenary hero" series="Kingdom of Lies, book 1 of 4"}}
+{{book title="A Court This Cruel and Lovely" author="Stacia Stark" link="https://link.amazon/B08fXXmBi" cover="" tropes="forbidden magic, slow burn, mercenary hero" series="Kingdom of Lies, book 1 of 4"}}
 Prisca hides a forbidden power in a kingdom that kills anyone with magic like hers. When she is found out, she has to run, and her best chance is a ruthless mercenary named Lorian with plenty of secrets. It is a true slow burn, so if you liked waiting for Feyre and Rhys, you will be very happy here.
 
 ## If Rhysand ruined you for good guys
 
-{{book title="From Blood and Ash" author="Jennifer L. Armentrout" link="https://www.amazon.com/dp/B086JMSSVH?tag=creativedi03c-20" cover="" tropes="forbidden romance, bodyguard, plot twists" series="Blood and Ash, book 1 (final book announced)"}}
+{{book title="From Blood and Ash" author="Jennifer L. Armentrout" link="https://link.amazon/B0hEWirpZ" cover="" tropes="forbidden romance, bodyguard, plot twists" series="Blood and Ash, book 1 (final book announced)"}}
 Poppy is the Maiden, chosen by the gods, veiled and kept apart from everyone. Then Hawke becomes her guard, and he is far more interested in the real her than anyone should be. It is for adults, it is long and the twists are the reason readers binge the whole series in a week.
 
-{{book title="Kingdom of the Wicked" author="Kerri Maniscalco" link="https://www.amazon.com/dp/B08537146Q?tag=creativedi03c-20" cover="" tropes="demon prince, enemies to lovers, revenge" series="Kingdom of the Wicked, book 1 (complete trilogy)"}}
+{{book title="Kingdom of the Wicked" author="Kerri Maniscalco" link="https://link.amazon/B08pnsYYv" cover="" tropes="demon prince, enemies to lovers, revenge" series="Kingdom of the Wicked, book 1 (complete trilogy)"}}
 In Sicily, Emilia is hunting whoever murdered her twin sister, and she summons Wrath, one of the princes of Hell, to help her do it. Their partnership is all banter and suspicion, and the slow build is delicious. The heat climbs as the trilogy goes on, which is very ACOTAR of it.
 
-{{book title="A Touch of Darkness" author="Scarlett St. Clair" link="https://www.amazon.com/dp/B09C2PWWNP?tag=creativedi03c-20" cover="" tropes="hades and persephone, bargain, god of the underworld" series="Hades x Persephone Saga, book 1 (complete, 4 books)"}}
+{{book title="A Touch of Darkness" author="Scarlett St. Clair" link="https://link.amazon/B00UoSdnZ" cover="" tropes="hades and persephone, bargain, god of the underworld" series="Hades x Persephone Saga, book 1 (complete, 4 books)"}}
 Persephone is a goddess living as a mortal journalist in New Athens, until she loses a bet to Hades and has to make life grow in the Underworld or lose her freedom. If the bargain between Feyre and Rhys was your favorite plot line, this whole book is built on one. It is an adult romance with a powerful, possessive hero.
 
 ## If you want something darker and gothic
 
-{{book title="One Dark Window" author="Rachel Gillig" link="https://www.amazon.com/dp/B09DFZ3N26?tag=creativedi03c-20" cover="" tropes="gothic, monster within, quest" series="The Shepherd King, book 1 (complete duology)"}}
+{{book title="One Dark Window" author="Rachel Gillig" link="https://link.amazon/B0jco5Slr" cover="" tropes="gothic, monster within, quest" series="The Shepherd King, book 1 (complete duology)"}}
 Elspeth shares her mind with an ancient creature she calls the Nightmare, and she has kept it secret her whole life. Then she joins Ravyn, the king's nephew, on a dangerous quest to collect magic cards that could save their cursed kingdom. It is moody, eerie and romantic, and the duology is finished.
 
-{{book title="Belladonna" author="Adalyn Grace" link="https://www.amazon.com/dp/B09HQM3RP1?tag=creativedi03c-20" cover="" tropes="gothic, murder mystery, death as love interest" series="Belladonna, book 1 (complete trilogy)"}}
+{{book title="Belladonna" author="Adalyn Grace" link="https://link.amazon/B0bx3d5wD" cover="" tropes="gothic, murder mystery, death as love interest" series="Belladonna, book 1 (complete trilogy)"}}
 Signa can see Death, and while she solves a murder in her new family's home, she starts falling for him. It is young adult and a slow burn with no explicit scenes, but the atmosphere is pure candlelit gothic. Perfect for the reader who loved the darker corners of the Night Court.
 
 ![A Kindle and a stack of fantasy books on a burgundy velvet throw with candles and a small vase of roses](/images/books-like-a-court-of-thorns-and-roses-3.jpg)
