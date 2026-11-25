@@ -1,7 +1,7 @@
 {
   "name": "The Bookish Girl",
-  "tagline": "Romance books worth losing sleep over.",
-  "description": "Romance book lists by trope, Kindle Unlimited finds, romantasy picks and gifts for romance readers, from a reader who reads romance every day.",
+  "tagline": "Books worth losing sleep over.",
+  "description": "Book lists for cozy readers: romance by trope, mystery and thriller page-turners, comforting feel-good reads and Kindle Unlimited finds.",
   "url": "https://blog.thebookishgirl.in",
   "author": "Vallari Gadre",
   "authorShort": "V",
@@ -43,13 +43,40 @@
       "image": ""
     },
     {
+      "name": "Mystery & Thriller",
+      "slug": "mystery-and-thriller",
+      "aliases": [
+        "Mystery",
+        "Thriller",
+        "Thrillers",
+        "Mysteries",
+        "Crime",
+        "Cozy Mystery"
+      ],
+      "blurb": "Twisty thrillers, cozy mysteries and whodunits you'll read in one sitting.",
+      "image": ""
+    },
+    {
+      "name": "Cozy Reads",
+      "slug": "cozy-reads",
+      "aliases": [
+        "Cozy",
+        "Feel-Good",
+        "Healing Fiction",
+        "Comfort Reads",
+        "Literary"
+      ],
+      "blurb": "Gentle, comforting books about bookshops, cafes and second chances, for when you need a hug in book form.",
+      "image": ""
+    },
+    {
       "name": "Gift Guides",
       "slug": "gift-guides",
       "aliases": [
         "Gifts",
         "Gift Guide"
       ],
-      "blurb": "Gifts for the romance reader in your life, at every budget.",
+      "blurb": "Gifts for the readers in your life, at every budget.",
       "image": ""
     }
   ],
@@ -57,13 +84,13 @@
   "googleAnalyticsId": "",
   "googleSiteVerification": "",
   "pinterestVerification": "",
-  "heroAlt": "A stack of romance paperbacks and a Kindle on a cozy blanket beside a mug of tea in warm lamplight",
+  "heroAlt": "A stack of paperbacks and a Kindle on a cozy blanket beside a mug of tea in warm lamplight",
   "shopUrl": "",
   "products": [],
   "newsletter": true,
   "stats": false,
   "trendingLabel": "Trending now",
-  "authorBio": "I read romance every single day, so these lists come from a reader who lives in the genre: the tropes I can't resist, the series worth binging and the Kindle Unlimited finds worth your time.",
+  "authorBio": "I read every day, so these lists come from a reader, not a robot: the romance tropes I can't resist, the mysteries and thrillers that keep me up past midnight, the cozy feel-good books that feel like a hug, and the Kindle Unlimited finds worth your time.",
   "banner": {
     "text": "New to Kindle Unlimited? Read thousands of romances free for 30 days",
     "url": "https://www.amazon.com/kindleunlimited?tag=creativedi03c-20"
