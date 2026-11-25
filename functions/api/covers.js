@@ -31,8 +31,8 @@ async function getToken(env, db) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       grant_type: "client_credentials",
-      client_id: env.AMAZON_CREDENTIAL_ID,
-      client_secret: env.AMAZON_CREDENTIAL_SECRET,
+      client_id: String(env.AMAZON_CREDENTIAL_ID).trim(),
+      client_secret: String(env.AMAZON_CREDENTIAL_SECRET).trim(),
       scope: "creatorsapi::default",
     }),
   });
@@ -70,7 +70,8 @@ export async function onRequestGet({ request, env }) {
   const debug = url.searchParams.get("debug") === "1";
   const asins = [...new Set((url.searchParams.get("asins") || "").split(",").map((s) => s.trim().toUpperCase()).filter((a) => ASIN.test(a)))].slice(0, 40);
   const out = {};
-  const info = { configured: !!(env.AMAZON_CREDENTIAL_ID && env.AMAZON_CREDENTIAL_SECRET), cached: 0, fetched: 0, errors: [] };
+  const idv = String(env.AMAZON_CREDENTIAL_ID || "").trim();
+  const info = { idShape: idv ? idv.slice(0, 18) + "... (" + idv.length + " chars)" : "", secretLen: String(env.AMAZON_CREDENTIAL_SECRET || "").trim().length, version: String(env.AMAZON_CREDENTIAL_VERSION || ""), configured: !!(env.AMAZON_CREDENTIAL_ID && env.AMAZON_CREDENTIAL_SECRET), cached: 0, fetched: 0, errors: [] };
   try {
     if (asins.length && env.DB) {
       const db = env.DB;
