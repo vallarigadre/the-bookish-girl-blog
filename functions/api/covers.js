@@ -70,7 +70,7 @@ export async function onRequestGet({ request, env }) {
   const debug = url.searchParams.get("debug") === "1";
   const asins = [...new Set((url.searchParams.get("asins") || "").split(",").map((s) => s.trim().toUpperCase()).filter((a) => ASIN.test(a)))].slice(0, 40);
   const out = {};
-  const info = { idShape: idv ? idv.slice(0, 18) + "... (" + idv.length + " chars)" : "", secretLen: String(env.AMAZON_CREDENTIAL_SECRET || "").trim().length, version: String(env.AMAZON_CREDENTIAL_VERSION || ""), configured: !!(env.AMAZON_CREDENTIAL_ID && env.AMAZON_CREDENTIAL_SECRET), cached: 0, fetched: 0, errors: [] };
+  const info = { configured: !!(env.AMAZON_CREDENTIAL_ID && env.AMAZON_CREDENTIAL_SECRET), cached: 0, fetched: 0, errors: [] };
   try {
     if (asins.length && env.DB) {
       const db = env.DB;
