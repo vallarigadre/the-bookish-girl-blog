@@ -26,53 +26,53 @@ I grouped them by what you are probably missing most: the dragons, the war colle
 
 ## For when you miss the dragons
 
-{{book title="Fear the Flames" author="Olivia Rose Darling" link="https://www.amazon.com/dp/B0CQJH1QV8?tag=creativedi03c-20" cover="" tropes="dragons, morally grey hero, revenge" series="Fear the Flames, book 1 (final book due March 2027)"}}
+{{book title="Fear the Flames" author="Olivia Rose Darling" link="https://www.amazon.com/dp/B0CQJH1QV8?tag=creativedi03c-20" cover="" tropes="dragons, morally grey hero, revenge" series="Fear the Flames, book 1 (final book due March 2027)" asin="B0CQJH1QV8"}}
 Elowen was separated from her dragons as a child and locked away by her own father, the king. To get them back, she makes an alliance with Cayden Veles, a commander the whole realm fears. Fire, war and a morally grey man with a plan: if you loved Xaden, start here.
 
-{{book title="When the Moon Hatched" author="Sarah A. Parker" link="https://www.amazon.com/dp/B0CNRY3M44?tag=creativedi03c-20" cover="" tropes="dragon riders, enemies to lovers, fated bond" series="Moonfall, book 1" heat="Spicy"}}
+{{book title="When the Moon Hatched" author="Sarah A. Parker" link="https://www.amazon.com/dp/B0CNRY3M44?tag=creativedi03c-20" cover="" tropes="dragon riders, enemies to lovers, fated bond" series="Moonfall, book 1" heat="Spicy" asin="B0CNRY3M44"}}
 Raeve is a rebel assassin who ends up captured and in the hands of Kaan Vaegor, a dragon-riding king. The world is brutal, the dragons are everything and the romance is dangerous in the best way. This one is for adults, with open-door scenes.
 
-{{book title="Fireborne" author="Rosaria Munda" link="https://www.amazon.com/dp/B07MYGW4K3?tag=creativedi03c-20" cover="" tropes="dragon riders, rivals, found family" series="The Aurelian Cycle, book 1 of 3"}}
+{{book title="Fireborne" author="Rosaria Munda" link="https://www.amazon.com/dp/B07MYGW4K3?tag=creativedi03c-20" cover="" tropes="dragon riders, rivals, found family" series="The Aurelian Cycle, book 1 of 3" asin="B07MYGW4K3"}}
 After a revolution, a lowborn girl and an orphaned aristocrat both ride dragons for the new regime, and they end up competing for the top rider position. It is young adult, so the romance is slower and the politics are front and center. If the rider training was your favorite part of Fourth Wing, do not skip this.
 
 ## For when you miss the war college
 
-{{book title="Blood of Hercules" author="Jasmine Mas" link="https://www.amazon.com/dp/B0DG5Y47VS?tag=creativedi03c-20" cover="" tropes="military academy, enemies to lovers, dark romantasy" series="Villains of Lore, book 1" heat="Spicy"}}
+{{book title="Blood of Hercules" author="Jasmine Mas" link="https://www.amazon.com/dp/B0DG5Y47VS?tag=creativedi03c-20" cover="" tropes="military academy, enemies to lovers, dark romantasy" series="Villains of Lore, book 1" heat="Spicy" asin="B0DG5Y47VS"}}
 A foster kid who has spent her life keeping her head down fails a blood test and learns she is one of the immortal Spartans. Next stop: the Spartan War Academy. Of everything on this list, it is the closest match to Basgiath's brutal school days, with a darker, possessive romance on top.
 
-{{book title="Legendborn" author="Tracy Deonn" link="https://www.amazon.com/dp/B084GB4YZQ?tag=creativedi03c-20" cover="" tropes="secret society, magic academy, grief" series="The Legendborn Cycle, book 1"}}
+{{book title="Legendborn" author="Tracy Deonn" link="https://www.amazon.com/dp/B084GB4YZQ?tag=creativedi03c-20" cover="" tropes="secret society, magic academy, grief" series="The Legendborn Cycle, book 1" asin="B084GB4YZQ"}}
 After her mother dies, Bree joins a residential program for gifted high schoolers at a university and stumbles onto a secret society built on Arthurian legend. To find out the truth about her mother, she fights her way through its dangerous initiation. Young adult, smart and full of magic, trials and secrets.
 
 ![A candlelit desk with a stack of old leather journals, a quill, a brass dragon figurine and a burgundy blanket draped over the chair](/images/romantasy-books-like-fourth-wing-2.jpg)
 
 ## For when you miss the deadly trials
 
-{{book title="Powerless" author="Lauren Roberts" link="https://www.amazon.com/dp/B0C541SB5M?tag=creativedi03c-20" cover="" tropes="deadly trials, forbidden romance, enemies to lovers" series="The Powerless Trilogy, book 1 (complete)"}}
+{{book title="Powerless" author="Lauren Roberts" link="https://www.amazon.com/dp/B0C541SB5M?tag=creativedi03c-20" cover="" tropes="deadly trials, forbidden romance, enemies to lovers" series="The Powerless Trilogy, book 1 (complete)" asin="B0C541SB5M"}}
 In a kingdom where being born without powers is a crime, an Ordinary girl pretending to be a Psychic saves the prince's life. That gets her thrown into a set of deadly trials, right next to the one person who could expose her. Young adult, addictive and finished, so you can binge all three.
 
-{{book title="The Serpent and the Wings of Night" author="Carissa Broadbent" link="https://www.amazon.com/dp/B09WRJJKXC?tag=creativedi03c-20" cover="" tropes="deadly tournament, enemies to lovers, vampires" series="Crowns of Nyaxia, book 1"}}
+{{book title="The Serpent and the Wings of Night" author="Carissa Broadbent" link="https://www.amazon.com/dp/B09WRJJKXC?tag=creativedi03c-20" cover="" tropes="deadly tournament, enemies to lovers, vampires" series="Crowns of Nyaxia, book 1" asin="B09WRJJKXC"}}
 Oraya is a human raised as the adopted daughter of a vampire king, and she enters a deadly tournament held in honor of the goddess of death. To survive it, she makes an uneasy alliance with a dangerous rival. The stakes, the fighting and the slow-burn tension will feel very familiar to Fourth Wing fans.
 
-{{book title="Five Broken Blades" author="Mai Corland" link="https://www.amazon.com/dp/B0CMP91GDG?tag=creativedi03c-20" cover="" tropes="assassins, found family, betrayal" series="The Broken Blades, book 1 (complete trilogy)"}}
+{{book title="Five Broken Blades" author="Mai Corland" link="https://www.amazon.com/dp/B0CMP91GDG?tag=creativedi03c-20" cover="" tropes="assassins, found family, betrayal" series="The Broken Blades, book 1 (complete trilogy)" asin="B0CMP91GDG"}}
 Five assassins and outcasts are hired for the same impossible job: kill a god-king. Every one of them is hiding something, and the betrayals start early. It comes from Red Tower, the same imprint as Fourth Wing, and the series is complete.
 
 ## For when you miss the enemies to lovers
 
-{{book title="The Hurricane Wars" author="Thea Guanzon" link="https://www.amazon.com/dp/B0BRJJRN8F?tag=creativedi03c-20" cover="" tropes="enemies to lovers, forced marriage, war" series="The Hurricane Wars, book 1 (complete trilogy)"}}
+{{book title="The Hurricane Wars" author="Thea Guanzon" link="https://www.amazon.com/dp/B0BRJJRN8F?tag=creativedi03c-20" cover="" tropes="enemies to lovers, forced marriage, war" series="The Hurricane Wars, book 1 (complete trilogy)" asin="B0BRJJRN8F"}}
 A soldier who wields light and the shadow-wielding heir of the empire she has been fighting for years are forced into a political alliance, and then a marriage. It is war-torn and full of simmering hatred that slowly turns into something else. The third and final book came out in October 2026, so you can read it all now.
 
-{{book title="Shield of Sparrows" author="Devney Perry" link="https://www.amazon.com/dp/B0DNXD8YB8?tag=creativedi03c-20" cover="" tropes="arranged marriage, slow burn, enemies to lovers" series="Shield of Sparrows, book 1 (final book due March 2027)" heat="Low to moderate"}}
+{{book title="Shield of Sparrows" author="Devney Perry" link="https://www.amazon.com/dp/B0DNXD8YB8?tag=creativedi03c-20" cover="" tropes="arranged marriage, slow burn, enemies to lovers" series="Shield of Sparrows, book 1 (final book due March 2027)" heat="Low to moderate" asin="B0DNXD8YB8"}}
 Odessa, the overlooked eldest princess, is sent to marry a distant prince in her sister's place under a blood treaty. In his kingdom, she faces monster attacks and court intrigue. Another Red Tower title, with a slow burn and only a few open-door scenes.
 
-{{book title="The Bridge Kingdom" author="Danielle L. Jensen" link="https://www.amazon.com/dp/B0CW1G1GSY?tag=creativedi03c-20" cover="" tropes="enemies to lovers, warrior heroine, arranged marriage" series="The Bridge Kingdom, book 1 (complete series)"}}
+{{book title="The Bridge Kingdom" author="Danielle L. Jensen" link="https://www.amazon.com/dp/B0CW1G1GSY?tag=creativedi03c-20" cover="" tropes="enemies to lovers, warrior heroine, arranged marriage" series="The Bridge Kingdom, book 1 (complete series)" asin="B0CW1G1GSY"}}
 A princess trained since childhood as a warrior and a spy is married off to the king of a rival kingdom, and her real mission is to bring him down. Then she starts to like him. A fighter heroine, a kingdom at war and a complete series to binge.
 
 ![A cozy armchair by a frosted window at night, a burgundy throw, a candle in a lantern and an open paperback with a red ribbon bookmark](/images/romantasy-books-like-fourth-wing-3.jpg)
 
-{{book title="Heartless Hunter" author="Kristen Ciccarelli" link="https://www.amazon.com/dp/B0C1X64T4N?tag=creativedi03c-20" cover="" tropes="enemies to lovers, secret identity, fake courtship" series="The Crimson Moth, book 1 (complete duology)"}}
+{{book title="Heartless Hunter" author="Kristen Ciccarelli" link="https://www.amazon.com/dp/B0C1X64T4N?tag=creativedi03c-20" cover="" tropes="enemies to lovers, secret identity, fake courtship" series="The Crimson Moth, book 1 (complete duology)" asin="B0C1X64T4N"}}
 By day she is a socialite. By night she is the Crimson Moth, secretly rescuing witches from persecution. Then she ends up in a fake courtship with the witch hunter assigned to catch her, and every flirtation is a risk. You may also see it under its UK title, The Crimson Moth.
 
-{{book title="Divine Rivals" author="Rebecca Ross" link="https://www.amazon.com/dp/B09Y468XS6?tag=creativedi03c-20" cover="" tropes="rivals to lovers, letters, war" series="Letters of Enchantment, book 1 (complete duology)"}}
+{{book title="Divine Rivals" author="Rebecca Ross" link="https://www.amazon.com/dp/B09Y468XS6?tag=creativedi03c-20" cover="" tropes="rivals to lovers, letters, war" series="Letters of Enchantment, book 1 (complete duology)" asin="B09Y468XS6"}}
 Two young journalists competing for the same job trade anonymous letters through magical typewriters while a war between gods rages around them. There are no dragons here, but there is a war, a rival and enough yearning to keep you up all night. Perfect if the letters and quiet moments were your favorite parts.
 
 ## Which one should you read first?

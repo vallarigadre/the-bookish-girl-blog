@@ -86,9 +86,11 @@ function bookCards(md) {
     const coverHtml = img
       ? `<img src="${esc(img)}" alt="${esc(isBook ? `Cover of ${title} by ${o.author || ""}` : title)}" loading="lazy">`
       : `<span class="book__ph"><span class="book__ph-t">${esc(title)}</span>${o.author ? `<span class="book__ph-a">${esc(o.author)}</span>` : ""}</span>`;
+    const asin = /^[A-Z0-9]{10}$/.test(o.asin || "") ? o.asin : ((link.match(/\/dp\/([A-Z0-9]{10})/) || [])[1] || "");
+    const coverAlt = isBook ? `Cover of ${title} by ${o.author || ""}` : title;
     const descHtml = desc.trim() ? `<div class="book__desc">${marked.parse(desc.trim())}</div>` : "";
     return `<div class="book${isBook ? "" : " book--pick"}">
-<a class="book__cover${/-3d\./.test(img) ? " book__cover--3d" : ""}" href="${esc(link)}">${coverHtml}</a>
+<a class="book__cover${/-3d\./.test(img) ? " book__cover--3d" : ""}" href="${esc(link)}"${asin ? ` data-asin="${asin}" data-alt="${esc(coverAlt)}"` : ""}>${coverHtml}</a>
 <div class="book__body">
 ${ku ? `<p class="book__badges"><span class="badge badge--ku">Free on Kindle Unlimited</span></p>` : ""}
 <h3 class="book__title"><a href="${esc(link)}">${esc(title)}</a></h3>
@@ -443,6 +445,7 @@ ${body}
     <p class="foot__fine">As an Amazon Associate I earn from qualifying purchases. &copy; ${new Date().getFullYear()} ${esc(site.name)}</p>
   </div>
 </footer>
+<script>(function(){var c=document.querySelectorAll(".book__cover[data-asin]");if(!c.length||!window.fetch)return;var a=[];c.forEach(function(e){a.indexOf(e.dataset.asin)<0&&a.push(e.dataset.asin)});fetch("/api/covers?asins="+a.join(",")).then(function(r){return r.ok?r.json():{}}).then(function(m){c.forEach(function(e){var u=m[e.dataset.asin];if(!u)return;var i=new Image();i.onload=function(){i.alt=e.dataset.alt||"";e.innerHTML="";e.classList.remove("book__cover--3d");e.appendChild(i)};i.src=u})})["catch"](function(){})})();</script>
 </body>
 </html>`;
 }
