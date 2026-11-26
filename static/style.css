@@ -484,3 +484,10 @@ h1, h2, h3 { font-family: var(--head); font-weight: 400; line-height: 1.15; lett
 .checkout__msg { color: var(--rose, #8a2f45); }
 .checkout__fine { font-size: .88rem; color: var(--soft); margin-top: 1rem; }
 @media (max-width: 860px) { .hero__genres { justify-content: center; } }
+
+/* Shop row: big cards that scroll sideways, so it can hold any number of products */
+.ownshop__rail { display: flex; gap: 1.2rem; overflow-x: auto; scroll-snap-type: x mandatory; padding: .4rem .2rem 1rem; margin: 1.6rem 0; scrollbar-width: thin; }
+.ownshop__rail .ownshop__item { flex: 0 0 clamp(240px, 28vw, 320px); scroll-snap-align: start; }
+.ownshop__rail .ownshop__item img, .ownshop__rail .ownshop__ph { aspect-ratio: 4 / 5; object-fit: cover; }
+.ownshop__rail .ownshop__title { font-size: 1.05rem; }
+@media (max-width: 600px) { .ownshop__rail .ownshop__item { flex-basis: 72%; } }

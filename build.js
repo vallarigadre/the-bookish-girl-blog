@@ -285,6 +285,8 @@ function productCard(p, variant = "") {
 const shop = fs.existsSync(path.join(ROOT, "shop.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "shop.json"), "utf8")) : null;
 const shopProduct = (id) => shop && shop.products.find((p) => p.id === id);
 const shopLive = (p) => p.status === "live" && (p.kind === "beacons" ? !!p.url : !!p.price);
+// The shop stays hidden (no homepage row, no menu link) until at least one product is live.
+const shopOpen = !!(shop && shop.products.some(shopLive));
 function shopHref(p) {
   if (!shopLive(p)) return "";
   return p.kind === "beacons" ? p.url : `/checkout/?p=${encodeURIComponent(p.id)}`;
@@ -396,7 +398,7 @@ function layout({ title, description, body, path: pagePath = "/", image = "", im
     ...["kindle-and-reading", "gift-guides"].filter(sec).map((x) => [sec(x).name, `/${x}/`]),
     ...(site.freebie ? [["Free printables", "/freebies/"]] : []),
   ]);
-  const nav = romanceMenu + navSection("mystery-and-thriller") + navSection("cozy-reads") + lifeMenu + (shop ? `<a href="/shop/"${cur("/shop/")}>Shop</a>` : "");
+  const nav = romanceMenu + navSection("mystery-and-thriller") + navSection("cozy-reads") + lifeMenu + (shopOpen ? `<a href="/shop/"${cur("/shop/")}>Shop</a>` : "");
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -457,7 +459,7 @@ ${body}
       ${site.sections.map((s) => `<a href="/${s.slug}/">${s.name}</a>`).join("")}
       <a href="/tropes/">By trope</a>
       ${site.freebie ? `<a href="/freebies/">Freebies</a>` : ""}
-      ${shop ? `<a href="/shop/">Shop</a>` : ""}
+      ${shopOpen ? `<a href="/shop/">Shop</a>` : ""}
       <a href="/archive/">All lists</a>
       <a href="/about/">About</a>
       <a href="/shipping-and-returns/">Shipping and returns</a>
@@ -537,13 +539,13 @@ function homePage(posts) {
 </section>`;
 
   // 5. Shop
-  const picks = shop ? shop.products.slice(0, 4) : [];
+  const picks = shopOpen ? shop.products.filter(shopLive) : [];
   const shopRow = !picks.length ? "" : `<section class="free home-shop" aria-labelledby="shop-h">
   <div class="wrap">
     <p class="kicker center">My own little shop</p>
     <h2 id="shop-h" class="h-sec center">The Bookish Girl shop</h2>
     <p class="home-shop__dek center">Cozy things for readers: printables, trackers and bookish merch. ${esc(shop.note || "")}</p>
-    <div class="ownshop__grid ownshop__grid--${picks.length}">${picks.map((p) => shopCard(p)).join("")}</div>
+    <div class="ownshop__rail">${picks.map((p) => shopCard(p)).join("")}</div>
     <p class="center"><a class="btn btn--line" href="/shop/">Visit the shop</a></p>
   </div>
 </section>`;
@@ -668,7 +670,7 @@ function shopPage() {
   const merch = shop.products.filter((p) => p.kind !== "beacons");
   const col = (id, name, blurb, list) => !list.length ? "" : `<section class="ownshop-col" id="${id}" aria-labelledby="h-${id}">
     <div class="ownshop-col__head"><h2 id="h-${id}">${name}</h2><p>${blurb}</p></div>
-    <div class="ownshop__grid ownshop__grid--4">${list.map((p) => shopCard(p)).join("")}</div>
+    <div class="ownshop__rail">${list.map((p) => shopCard(p)).join("")}</div>
   </section>`;
   const body = `<section class="wrap shop-page">
   <header class="listing__head"><h1>The Bookish Girl shop</h1>
@@ -733,7 +735,7 @@ function feeds(posts, pages) {
   const urls = [
     ...["/", "/archive/", ...site.sections.map((s) => `/${s.slug}/`)].map((u) => ({ u, lastmod: latest })),
     ...pages.map((p) => ({ u: `/${p.slug}/` })),
-    ...(shop ? [{ u: "/shop/", lastmod: latest }] : []),
+    ...(shopOpen ? [{ u: "/shop/", lastmod: latest }] : []),
     ...posts.map((p) => ({ u: p.url, lastmod: day(p.date), img: p.cover && fs.existsSync(path.join(ROOT, "static", p.cover)) ? SITE_URL + p.cover : "" })),
   ];
   write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${urls.map(({ u, lastmod, img }) => `<url><loc>${SITE_URL}${u}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}${img ? `<image:image><image:loc>${esc(img)}</image:loc></image:image>` : ""}</url>`).join("")}</urlset>`);
