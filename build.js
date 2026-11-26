@@ -280,25 +280,35 @@ function productCard(p, variant = "") {
 </aside>`;
 }
 
-// V's own shop (Pretty Little Rituals on Shopify). Product data lives in shop.json.
+// V's own shop for this blog: Printify merch paid through PayPal on /checkout/, and Beacons digital products.
+// Product data lives in shop.json. status "soon" shows a coming-soon box; "live" makes it buyable.
 const shop = fs.existsSync(path.join(ROOT, "shop.json")) ? JSON.parse(fs.readFileSync(path.join(ROOT, "shop.json"), "utf8")) : null;
-const shopUrl = (p, place) => `${shop.url}/${p}?utm_source=prettylittlerituals.blog&utm_medium=blog&utm_campaign=${place}`;
-const shopProduct = (h) => shop && shop.products.find((p) => p.handle === h);
-function shopCard(p, place) {
-  return `<a class="ownshop__item" href="${esc(shopUrl("products/" + p.handle, place))}" target="_blank" rel="noopener">
-    <img src="${esc(p.image)}&width=600" alt="${esc(p.title)}" loading="lazy" width="600" height="600">
-    <span class="ownshop__title">${esc(p.title)}</span>
-    <span class="ownshop__price">$${esc(p.price)}</span>
-  </a>`;
+const shopProduct = (id) => shop && shop.products.find((p) => p.id === id);
+const shopLive = (p) => p.status === "live" && (p.kind === "beacons" ? !!p.url : !!p.price);
+function shopHref(p) {
+  if (!shopLive(p)) return "";
+  return p.kind === "beacons" ? p.url : `/checkout/?p=${encodeURIComponent(p.id)}`;
 }
-function shopBlockHtml(items, place) {
-  return `<aside class="ownshop" id="our-shop" aria-label="From the Pretty Little Rituals shop">
-  <p class="ownshop__kicker">From my own little line</p>
-  <div class="ownshop__grid ownshop__grid--${items.length}">${items.map((p) => shopCard(p, place)).join("")}</div>
-  <p class="ownshop__note">Made for this blog. ${esc(shop.note)} <a href="/shop/">See the whole shop</a>.</p>
+function shopCard(p) {
+  const href = shopHref(p);
+  const ext = href && p.kind === "beacons";
+  const pic = p.image ? `<img src="${esc(p.image)}" alt="${esc(p.title)}" loading="lazy" width="600" height="600">` : `<span class="ownshop__ph" aria-hidden="true">${BOOK}</span>`;
+  const inner = `${pic}
+    <span class="ownshop__title">${esc(p.title)}</span>
+    ${p.blurb ? `<span class="ownshop__blurb">${esc(p.blurb)}</span>` : ""}
+    <span class="ownshop__price">${href ? (p.price ? `$${esc(p.price)}` : "Get it") : "Coming soon"}</span>`;
+  return href
+    ? `<a class="ownshop__item" href="${esc(href)}"${ext ? ' target="_blank" rel="noopener"' : ""}>${inner}</a>`
+    : `<div class="ownshop__item ownshop__item--soon">${inner}</div>`;
+}
+function shopBlockHtml(items) {
+  return `<aside class="ownshop" id="our-shop" aria-label="From The Bookish Girl shop">
+  <p class="ownshop__kicker">From my own little shop</p>
+  <div class="ownshop__grid ownshop__grid--${items.length}">${items.map((p) => shopCard(p)).join("")}</div>
+  <p class="ownshop__note">${esc(shop.note || "")} <a href="/shop/">See the whole shop</a>.</p>
 </aside>`;
 }
-// In a post, a paragraph with {{shop:handle}} or {{shop:handle-one,handle-two}} becomes a card row of V's own pieces.
+
 function shopBlocks(html, place) {
   if (!shop) return html.replace(/<p>\s*\{\{shop:[^}]*\}\}\s*<\/p>/g, "");
   return html.replace(/<p>\s*\{\{shop:([^}]*)\}\}\s*<\/p>/g, (m, list) => {
@@ -374,8 +384,19 @@ function layout({ title, description, body, path: pagePath = "/", image = "", im
   const canonical = SITE_URL + pagePath;
   const cur = (u) => (pagePath.startsWith(u) ? ' aria-current="page"' : "");
   const navSection = (slug) => { const s = site.sections.find((x) => x.slug === slug); return s ? `<a href="/${s.slug}/"${cur("/" + s.slug + "/")}>${s.name}</a>` : ""; };
-  const tropeMenu = (site.tropes || []).length ? `<div class="nav__drop"><a href="/tropes/"${cur("/tropes/")}>By trope</a><div class="nav__menu">${site.tropes.map((t) => `<a href="/tropes/${t.slug}/">${esc(t.name)}</a>`).join("")}<a href="/tropes/" class="nav__all">All tropes</a></div></div>` : "";
-  const nav = navSection("book-lists") + tropeMenu + site.sections.filter((s) => s.slug !== "book-lists").map((s) => navSection(s.slug)).join("") + (site.freebie ? `<a href="/freebies/"${cur("/freebies/")}>Freebies</a>` : "");
+  const drop = (label, href, links) => `<div class="nav__drop"><a href="${href}"${cur(href)}>${label}</a><div class="nav__menu">${links.map(([t, u, c]) => `<a href="${u}"${c ? ` class="${c}"` : ""}>${esc(t)}</a>`).join("")}</div></div>`;
+  const sec = (slug) => site.sections.find((x) => x.slug === slug);
+  const romanceMenu = drop("Romance", "/book-lists/", [
+    ["Romance book lists", "/book-lists/"],
+    ...(sec("romantasy") ? [["Romantasy", "/romantasy/"]] : []),
+    ...(site.tropes || []).slice(0, 8).map((t) => [t.name, `/tropes/${t.slug}/`]),
+    ["All tropes", "/tropes/", "nav__all"],
+  ]);
+  const lifeMenu = drop("Reading life", "/kindle-and-reading/", [
+    ...["kindle-and-reading", "gift-guides"].filter(sec).map((x) => [sec(x).name, `/${x}/`]),
+    ...(site.freebie ? [["Free printables", "/freebies/"]] : []),
+  ]);
+  const nav = romanceMenu + navSection("mystery-and-thriller") + navSection("cozy-reads") + lifeMenu + (shop ? `<a href="/shop/"${cur("/shop/")}>Shop</a>` : "");
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -436,8 +457,10 @@ ${body}
       ${site.sections.map((s) => `<a href="/${s.slug}/">${s.name}</a>`).join("")}
       <a href="/tropes/">By trope</a>
       ${site.freebie ? `<a href="/freebies/">Freebies</a>` : ""}
+      ${shop ? `<a href="/shop/">Shop</a>` : ""}
       <a href="/archive/">All lists</a>
       <a href="/about/">About</a>
+      <a href="/shipping-and-returns/">Shipping and returns</a>
       <a href="/disclosure/">Affiliate disclosure</a>
       <a href="/privacy/">Privacy</a>
       <a href="/rss.xml">RSS</a>
@@ -459,86 +482,86 @@ function mini(post) {
 
 function homePage(posts) {
   const img = (f) => fs.existsSync(path.join(ROOT, "static/images", f));
-  const latest = posts.slice(0, 6);
+  const newest = posts[0];
+  const latest = posts.slice(1, 7);
   const heroImg = img("hero.jpg")
     ? `<img src="/images/hero.jpg" alt="${esc(site.heroAlt)}" fetchpriority="high">`
-    : `<div class="ph ph--oat" aria-hidden="true">${motifs.fragrance}</div>`;
-  const aboutImg = img("about.jpg")
-    ? `<img src="/images/about.jpg" alt="A cozy reading corner with romance paperbacks and a Kindle" loading="lazy">`
-    : `<div class="ph ph--oat" aria-hidden="true">${motifs.skincare}</div>`;
+    : `<div class="ph ph--oat" aria-hidden="true">${BOOK}</div>`;
 
+  // 1. What this blog is
   const hero = `<section class="hero wrap" aria-labelledby="hero-h">
   <div class="hero__text">
-    <h1 id="hero-h" class="hero__title"><span>Romance books</span><strong>Worth it</strong><span>and worth staying up until 2 a.m. for</span></h1>
-    <p class="hero__lede">Romance book lists by trope, Kindle Unlimited finds, romantasy picks and gifts for the reader who always has one more chapter to go.</p>
+    <p class="kicker">Book recommendations for every mood</p>
+    <h1 id="hero-h" class="hero__title"><span>Books worth</span><strong>losing sleep</strong><span>over</span></h1>
+    <p class="hero__lede">Swoony romance by trope, twisty mysteries and thrillers, and cozy feel-good reads that feel like a hug. Every list marks the Kindle Unlimited books, so you can start reading tonight.</p>
+    <p class="hero__genres"><a href="/book-lists/">Romance</a><a href="/mystery-and-thriller/">Mystery &amp; thriller</a><a href="/cozy-reads/">Cozy reads</a></p>
     <div class="hero__actions">
-      <a class="btn btn--peach" href="/book-lists/">Find your next read</a>
-      ${site.newsletter ? `<a class="btn btn--line" href="#letter-h">Get the free bingo card</a>` : `<a class="btn btn--line" href="/archive/">Read the lists</a>`}
+      <a class="btn btn--peach" href="#next-h">Find your next read</a>
+      ${site.newsletter ? `<a class="btn btn--line" href="#letter-h">Get the free bingo card</a>` : ""}
     </div>
   </div>
   <div class="hero__media"><div class="hero__frame">${heroImg}</div></div>
 </section>`;
 
-  const welcome = `<section class="welcome wrap narrow">
-  <p>Welcome to The Bookish Girl, a romance reader's corner of the internet.</p>
-  <p>Every list here is built around the tropes you search for, with the Kindle Unlimited books clearly marked, so you can find your next obsession fast.</p>
-  <blockquote class="quote"><span aria-hidden="true">&ldquo;</span>Just one more chapter.<br>Said every romance reader, ever.</blockquote>
+  // 2. The newest post, always featured
+  const featured = !newest ? "" : `<section class="newest wrap" aria-labelledby="newest-h">
+  <a class="newest__card" href="${newest.url}">
+    <span class="newest__img">${cover(newest, "lg")}</span>
+    <span class="newest__text">
+      <span class="kicker">My newest list</span>
+      <strong id="newest-h" class="newest__title">${esc(newest.title)}</strong>
+      <span class="newest__dek">${esc(newest.subtitle || newest.description)}</span>
+      <span class="btn btn--peach newest__btn">Read it now</span>
+    </span>
+  </a>
 </section>`;
 
-  const sections = `<section class="starts wrap" aria-labelledby="topics-h">
-  <p class="kicker center">Not sure what to read next?</p>
-  <h2 id="topics-h" class="h-sec center">Start here</h2>
-  <div class="starts__grid">${(site.startHere || []).map((t, i) => {
+  // 3. What to read next, by mood
+  const tile = (t, i) => {
     const f = t.image && img(t.image);
-    return `<a class="start start--${i + 1}" href="${esc(t.url)}">${f ? `<img src="/images/${esc(t.image)}" alt="" loading="lazy">` : ""}<span class="start__in"><strong>${esc(t.title)}</strong><span>${esc(t.sub)} &rarr;</span></span></a>`;
-  }).join("")}</div>
-</section>
-<section class="tropes wrap" aria-labelledby="tropes-h">
-  <p class="kicker center">Pick your favorite trope</p>
-  <h2 id="tropes-h" class="h-sec center">Browse by trope</h2>
-  <div class="tropes__list">${(site.tropes || []).map((t) => `<a class="trope" href="/tropes/${t.slug}/"><span class="trope__e" aria-hidden="true">${esc(t.emoji || "")}</span>${esc(t.name)}</a>`).join("")}</div>
+    return `<a class="start start--${i + 1}${f ? "" : " start--plain"}" href="${esc(t.url)}">${f ? `<img src="/images/${esc(t.image)}" alt="" loading="lazy">` : ""}<span class="start__in"><strong>${esc(t.title)}</strong><span>${esc(t.sub)} &rarr;</span></span></a>`;
+  };
+  const readNext = `<section class="starts wrap" aria-labelledby="next-h">
+  <p class="kicker center">Pick your mood</p>
+  <h2 id="next-h" class="h-sec center">What to read next</h2>
+  <div class="starts__grid">${(site.startHere || []).map(tile).join("")}</div>
+  <p class="center starts__tropes">Love a good trope? <a href="/tropes/">Browse romance by trope</a></p>
 </section>`;
 
-  // Trending row: only when it adds posts that are not already in Latest lists.
-  const hot = posts.filter((p) => p.trending).slice(0, 3);
-  if (hot.every((p) => latest.includes(p))) hot.length = 0;
-  const trending = !hot.length ? "" : `<section class="trending wrap" aria-labelledby="trend-h">
-  <p class="kicker">What readers are searching for</p>
-  <h2 id="trend-h" class="h-sec">${esc(site.trendingLabel || "Trending now")}</h2>
-  <div class="grid">${hot.map(card).join("")}</div>
-</section>`;
-
+  // 4. More lists
   const blog = !latest.length ? "" : `<section class="latest wrap" aria-labelledby="latest-h">
   <p class="kicker">Fresh off the shelf</p>
   <h2 id="latest-h" class="h-sec">Latest lists</h2>
   <div class="grid">${latest.map(card).join("")}</div>
-  ${posts.length > 6 ? `<p class="center"><a class="btn btn--line" href="/archive/">See every list</a></p>` : ""}
+  ${posts.length > 7 ? `<p class="center"><a class="btn btn--line" href="/archive/">See every list</a></p>` : ""}
 </section>`;
 
-  const homePicks = shop ? (shop.home || []).map(shopProduct).filter(Boolean).slice(0, 4) : [];
-  const freebies = !homePicks.length ? "" : `<section class="free home-shop" aria-labelledby="free-h">
+  // 5. Shop
+  const picks = shop ? shop.products.slice(0, 4) : [];
+  const shopRow = !picks.length ? "" : `<section class="free home-shop" aria-labelledby="shop-h">
   <div class="wrap">
-    <p class="kicker center">My own little line</p>
-    <h2 id="free-h" class="h-sec center">Shop Pretty Little Rituals</h2>
-    <p class="home-shop__dek center">Lip gloss and blush named after the small moments that make a day feel good. ${esc(shop.note)}</p>
-    <div class="ownshop__grid ownshop__grid--${homePicks.length}">${homePicks.map((p) => shopCard(p, "home")).join("")}</div>
-    <p class="center"><a class="btn btn--line" href="/shop/">Shop all</a></p>
+    <p class="kicker center">My own little shop</p>
+    <h2 id="shop-h" class="h-sec center">The Bookish Girl shop</h2>
+    <p class="home-shop__dek center">Cozy things for readers: printables, trackers and bookish merch. ${esc(shop.note || "")}</p>
+    <div class="ownshop__grid ownshop__grid--${picks.length}">${picks.map((p) => shopCard(p)).join("")}</div>
+    <p class="center"><a class="btn btn--line" href="/shop/">Visit the shop</a></p>
   </div>
 </section>`;
 
+  // 6. About and the free printable
   const author = img("author.jpg")
-    ? `<img src="/images/author.jpg" alt="${esc(site.authorPhotoAlt || "Vallari with a stack of romance books")}" loading="lazy">`
+    ? `<img src="/images/author.jpg" alt="${esc(site.authorPhotoAlt || "Vallari with a stack of books")}" loading="lazy">`
     : `<span class="ph ph--book-lists" aria-hidden="true">${BOOK}</span>`;
   const aboutStrip = `<section class="hello wrap" aria-labelledby="hello-h">
   <div class="hello__img">${author}</div>
   <div class="hello__text">
     <p class="kicker">Hi, I'm Vallari</p>
-    <h2 id="hello-h" class="h-sec">A romance reader, every single day</h2>
+    <h2 id="hello-h" class="h-sec">A reader, every single day</h2>
     <p>${esc(site.authorBio || "")}</p>
     <p><a class="btn btn--line" href="/about/">More about me</a></p>
   </div>
 </section>`;
-  const body = `${hero}\n${sections}\n${trending}\n${blog}\n${aboutStrip}\n${welcome}\n${newsletter}`;
+  const body = `${hero}\n${featured}\n${readNext}\n${blog}\n${shopRow}\n${aboutStrip}\n${newsletter}`;
   write("index.html", layout({ path: "/", body, description: site.description }));
 }
 
@@ -641,19 +664,55 @@ ${newsletter}`;
 
 function shopPage() {
   if (!shop) return;
-  const section = (c, list) => `<section class="ownshop-col" id="${esc(c.handle)}" aria-labelledby="h-${esc(c.handle)}">
-    <div class="ownshop-col__head"><h2 id="h-${esc(c.handle)}">${esc(c.name)}</h2>${c.blurb ? `<p>${esc(c.blurb)}</p>` : ""}
-    <a class="ownshop-col__all" href="${esc(shopUrl("collections/" + c.handle, "shop-page"))}" target="_blank" rel="noopener">Shop ${esc(c.name.toLowerCase())}</a></div>
-    <div class="ownshop__grid ownshop__grid--4">${list.map((p) => shopCard(p, "shop-page")).join("")}</div>
+  const digital = shop.products.filter((p) => p.kind === "beacons");
+  const merch = shop.products.filter((p) => p.kind !== "beacons");
+  const col = (id, name, blurb, list) => !list.length ? "" : `<section class="ownshop-col" id="${id}" aria-labelledby="h-${id}">
+    <div class="ownshop-col__head"><h2 id="h-${id}">${name}</h2><p>${blurb}</p></div>
+    <div class="ownshop__grid ownshop__grid--4">${list.map((p) => shopCard(p)).join("")}</div>
   </section>`;
-  const cols = shop.collections.map((c) => [c, shop.products.filter((p) => p.collection === c.handle)]).filter(([, l]) => l.length);
   const body = `<section class="wrap shop-page">
-  <header class="listing__head"><h1>The Pretty Little Rituals shop</h1>
-  <p>My own little line of lip gloss, blush and gifts, named after the small moments that make a day feel good. ${esc(shop.note)}</p></header>
-  ${cols.map(([c, l]) => section(c, l)).join("")}
-  <p class="shop-page__foot"><a class="btn btn--line" href="${esc(shopUrl("collections/all", "shop-page"))}" target="_blank" rel="noopener">Visit the full shop</a></p>
+  <header class="listing__head"><h1>The Bookish Girl shop</h1>
+  <p>Cozy things for readers: digital trackers and printables, and bookish merch made to order. ${esc(shop.note || "")}</p></header>
+  ${col("merch", "Bookish merch", "Made to order for readers and paid securely with PayPal.", merch)}
+  ${col("digital", "Digital downloads", "Trackers and printables, delivered instantly.", digital)}
+  <p class="shop-page__foot">Questions about an order? See <a href="/shipping-and-returns/">shipping and returns</a>.</p>
 </section>${newsletter}`;
-  write("shop/index.html", layout({ title: "Shop", description: "Lip gloss, blush and gifts from Pretty Little Rituals, made for everyday rituals. Free US shipping over $50.", path: "/shop/", body }));
+  write("shop/index.html", layout({ title: "Shop", description: "Bookish merch, reading trackers and printables from The Bookish Girl.", path: "/shop/", body }));
+
+  // Checkout: one page for every PayPal product, chosen with ?p=<product id>.
+  const data = shop.products.filter((p) => p.kind !== "beacons").map((p) => ({ id: p.id, title: p.title, blurb: p.blurb || "", price: p.price || "", shipping: p.shipping || "0", image: p.image || "", live: shopLive(p) }));
+  write("shop-data.json", JSON.stringify({ currency: shop.currency || "USD", products: data }));
+  const checkout = `<section class="wrap narrow checkout" aria-labelledby="co-h">
+  <h1 id="co-h">Checkout</h1>
+  <div id="co" class="checkout__box"><p>Loading your item...</p></div>
+  <p class="checkout__fine">Payment is handled securely by PayPal; you can pay with your PayPal account or a card. Items are made to order. See <a href="/shipping-and-returns/">shipping and returns</a>.</p>
+</section>
+<script>
+(function(){
+  var box=document.getElementById("co");
+  var id=new URLSearchParams(location.search).get("p");
+  function money(n){return "$"+Number(n).toFixed(2)}
+  Promise.all([fetch("/shop-data.json").then(function(r){return r.json()}),fetch("/api/paypal/config").then(function(r){return r.json()})]).then(function(res){
+    var shop=res[0],cfg=res[1],p=shop.products.filter(function(x){return x.id===id})[0];
+    if(!p||!p.live){box.innerHTML='<p>This item isn’t available yet. <a href="/shop/">Back to the shop</a></p>';return}
+    if(!cfg.clientId){box.innerHTML='<p>Checkout opens soon. <a href="/shop/">Back to the shop</a></p>';return}
+    box.innerHTML='<div class="checkout__item">'+(p.image?'<img src="'+p.image+'" alt="">':'')+'<div><h2>'+p.title+'</h2><p>'+p.blurb+'</p><p class="checkout__price">'+money(p.price)+(Number(p.shipping)>0?' + '+money(p.shipping)+' shipping':' with free US shipping')+'</p><label>Quantity <select id="qty"><option>1</option><option>2</option><option>3</option><option>4</option></select></label></div></div><div id="pp"></div><p id="co-msg" class="checkout__msg" role="status"></p>';
+    var s=document.createElement("script");
+    s.src="https://www.paypal.com/sdk/js?client-id="+encodeURIComponent(cfg.clientId)+"&currency="+(shop.currency||"USD")+"&intent=capture";
+    s.onload=function(){
+      paypal.Buttons({
+        style:{color:"gold",shape:"pill",label:"pay"},
+        createOrder:function(){return fetch("/api/paypal/order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:p.id,qty:Number(document.getElementById("qty").value)})}).then(function(r){return r.json()}).then(function(j){if(!j.id)throw new Error(j.error||"order");return j.id})},
+        onApprove:function(d){return fetch("/api/paypal/capture",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({orderID:d.orderID})}).then(function(r){return r.json()}).then(function(j){if(j.status==="COMPLETED"){location.href="/order-complete/?o="+encodeURIComponent(d.orderID)}else{document.getElementById("co-msg").textContent="Something went wrong with the payment. You have not been charged twice; please try again or contact me."}})},
+        onError:function(){document.getElementById("co-msg").textContent="PayPal couldn’t complete the payment. Please try again."}
+      }).render("#pp");
+    };
+    document.head.appendChild(s);
+  })["catch"](function(){box.innerHTML='<p>Checkout couldn’t load. Please refresh the page.</p>'});
+})();
+</script>`;
+  write("checkout/index.html", layout({ title: "Checkout", path: "/checkout/", noindex: true, body: checkout }));
+  write("order-complete/index.html", layout({ title: "Thank you for your order", path: "/order-complete/", noindex: true, body: `<section class="wrap narrow empty"><h1>Thank you for your order</h1><p>Your payment went through, and PayPal has emailed you a receipt. Your order is made to order, and you'll get an email with tracking once it ships.</p><p><a class="btn btn--peach" href="/">Find your next read</a></p></section>` }));
 }
 
 function staticPages(pages) {
@@ -674,7 +733,7 @@ function feeds(posts, pages) {
   const urls = [
     ...["/", "/archive/", ...site.sections.map((s) => `/${s.slug}/`)].map((u) => ({ u, lastmod: latest })),
     ...pages.map((p) => ({ u: `/${p.slug}/` })),
-    ...((site.products || []).length ? [{ u: "/shop/", lastmod: latest }] : []),
+    ...(shop ? [{ u: "/shop/", lastmod: latest }] : []),
     ...posts.map((p) => ({ u: p.url, lastmod: day(p.date), img: p.cover && fs.existsSync(path.join(ROOT, "static", p.cover)) ? SITE_URL + p.cover : "" })),
   ];
   write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">${urls.map(({ u, lastmod, img }) => `<url><loc>${SITE_URL}${u}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ""}${img ? `<image:image><image:loc>${esc(img)}</image:loc></image:image>` : ""}</url>`).join("")}</urlset>`);

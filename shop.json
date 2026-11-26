@@ -1,0 +1,46 @@
+{
+  "currency": "USD",
+  "note": "Made to order and shipped in the US.",
+  "products": [
+    {
+      "id": "bookshelf-reading-tracker",
+      "title": "Bookshelf Reading Tracker",
+      "blurb": "A Google Sheets bookshelf that fills in real book covers as you log what you read.",
+      "kind": "beacons",
+      "url": "",
+      "price": "",
+      "image": "",
+      "status": "soon"
+    },
+    {
+      "id": "merch-1",
+      "title": "New bookish merch",
+      "blurb": "Something cozy for readers is on its way.",
+      "kind": "printify",
+      "price": "",
+      "shipping": "",
+      "image": "",
+      "status": "soon"
+    },
+    {
+      "id": "merch-2",
+      "title": "New bookish merch",
+      "blurb": "Something cozy for readers is on its way.",
+      "kind": "printify",
+      "price": "",
+      "shipping": "",
+      "image": "",
+      "status": "soon"
+    },
+    {
+      "id": "merch-3",
+      "title": "New bookish merch",
+      "blurb": "Something cozy for readers is on its way.",
+      "kind": "printify",
+      "price": "",
+      "shipping": "",
+      "image": "",
+      "status": "soon"
+    }
+  ]
+}

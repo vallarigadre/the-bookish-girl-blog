@@ -105,28 +105,28 @@
   },
   "startHere": [
     {
-      "title": "Kindle Unlimited romance",
-      "sub": "Read free",
+      "title": "Romance",
+      "sub": "By trope",
       "url": "/book-lists/",
-      "image": "start-ku.jpg"
-    },
-    {
-      "title": "Browse by trope",
-      "sub": "Pick your mood",
-      "url": "/tropes/",
       "image": "start-tropes.jpg"
     },
     {
-      "title": "Romantasy",
-      "sub": "Dragons and fae",
-      "url": "/romantasy/",
-      "image": "start-romantasy.jpg"
+      "title": "Mystery & thriller",
+      "sub": "Can't put it down",
+      "url": "/mystery-and-thriller/",
+      "image": "start-mystery.jpg"
     },
     {
-      "title": "Gifts for readers",
-      "sub": "Shop the guides",
-      "url": "/gift-guides/",
-      "image": "start-gifts.jpg"
+      "title": "Cozy reads",
+      "sub": "A hug in book form",
+      "url": "/cozy-reads/",
+      "image": "start-cozy.jpg"
+    },
+    {
+      "title": "Free on Kindle Unlimited",
+      "sub": "Read free",
+      "url": "/book-lists/",
+      "image": "start-ku.jpg"
     }
   ],
   "tropes": [
